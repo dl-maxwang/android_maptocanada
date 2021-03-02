@@ -3,23 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    app:startDestination="@+id/navigation_news">
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.zhen.maptocanada.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:id="@+id/navigation_news"
+        android:name="com.zhen.maptocanada.ui.news.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/navigation_commonsense"
+        android:name="com.zhen.maptocanada.ui.commonknowledge.CommonKnowledge"
+        android:label="@string/title_common_sense"
         tools:layout="@layout/fragment_home" />
-
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.zhen.maptocanada.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/navigation_crs"
+        android:name="com.zhen.maptocanada.ui.crs.CrsFragment"
+        android:label="@string/title_self_crs"
+        tools:layout="@layout/fragment_crs" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.zhen.maptocanada.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_search"
+        android:name="com.zhen.maptocanada.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search"
+        />
 </navigation>

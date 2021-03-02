@@ -1,16 +1,16 @@
-package com.zhen.maptocanada.ui.dashboard;
+package com.zhen.maptocanada.ui.crs;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class CrsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public CrsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is CRS");
     }
 
     public LiveData<String> getText() {
