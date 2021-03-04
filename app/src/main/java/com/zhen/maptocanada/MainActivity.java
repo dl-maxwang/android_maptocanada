@@ -1,6 +1,7 @@
 package com.zhen.maptocanada;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.zhen.maptocanada.httpdata.HttpManager;
@@ -11,14 +12,17 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.io.IOException;
+
+import okhttp3.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        HttpManager httpManager = new HttpManager();
-        httpManager.init();
+        HttpManager httpManager = new HttpManager("zh-hans");
 
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -30,6 +34,21 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        new Thread(() -> {
+            try {
+                Response articles = httpManager.getNewsArticles(1, 10);
+                if (articles.body() != null) {
+                    Log.d("HttpTest", articles.body().string());
+                }
+                Response categories = httpManager.getCategories();
+                if (categories.body() != null) {
+                    Log.d("HttpTest", categories.body().string());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
 }

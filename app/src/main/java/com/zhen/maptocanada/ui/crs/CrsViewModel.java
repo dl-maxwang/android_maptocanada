@@ -10,7 +10,7 @@ public class CrsViewModel extends ViewModel {
 
     public CrsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is CRS");
+        mText.setValue("Comprehensive Ranking System\n技术移民个人评分系统");
     }
 
     public LiveData<String> getText() {
