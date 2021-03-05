@@ -14,11 +14,11 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:src="@mipmap/item_icon"
             android:id="@+id/iv_news_img"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="10dp"
-            android:src="@mipmap/item_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
