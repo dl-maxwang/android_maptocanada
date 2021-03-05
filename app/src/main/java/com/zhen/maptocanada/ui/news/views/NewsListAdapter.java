@@ -21,13 +21,14 @@ import java.util.List;
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsListItemViewHolder> {
 
     private List<NewsListData.NewsPreviewBean> newsList;
+    public ItemNewsBinding itemViewBinding;
 
     @NonNull
     @Override
     public NewsListItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        ItemNewsBinding inflate = DataBindingUtil.inflate(layoutInflater, R.layout.item_news, parent, false);
-        return new NewsListItemViewHolder(inflate);
+        itemViewBinding = DataBindingUtil.inflate(layoutInflater, R.layout.item_news, parent, false);
+        return new NewsListItemViewHolder(itemViewBinding);
     }
 
     @Override

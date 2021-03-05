@@ -1,6 +1,7 @@
 package com.zhen.maptocanada.data.news;
 
 import java.util.List;
+import java.util.Objects;
 
 public class NewsListData {
 
@@ -77,6 +78,20 @@ public class NewsListData {
         private boolean home_push;
         private String language;
         private String thumb;
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            NewsPreviewBean that = (NewsPreviewBean) o;
+            return id == that.id;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id);
+        }
+
         /**
          * id : 1
          * user : 1

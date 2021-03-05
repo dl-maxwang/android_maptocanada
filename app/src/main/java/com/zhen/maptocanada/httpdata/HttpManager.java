@@ -2,8 +2,12 @@ package com.zhen.maptocanada.httpdata;
 
 import androidx.annotation.WorkerThread;
 
+import com.zhen.maptocanada.data.news.NewsListData;
+
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -25,7 +29,7 @@ public class HttpManager {
 
     private String language = "zh-hans";
 
-    OkHttpClient httpClient = new OkHttpClient();
+    private OkHttpClient httpClient;
     private final HttpUrl.Builder categoriesUrl;
     private final HttpUrl.Builder articlesUrlBuilder;
     private static HttpManager instance;
@@ -42,6 +46,9 @@ public class HttpManager {
     }
 
     public HttpManager() {
+        httpClient = new OkHttpClient.Builder()
+                .callTimeout(5000, TimeUnit.SECONDS)
+                .build();
         sbCategoryUrl.append(BASE_URL);
         sbArticlesUrl.append(BASE_URL);
         if (HttpConfig.LANGUAGE_EN.equalsIgnoreCase(language)) {

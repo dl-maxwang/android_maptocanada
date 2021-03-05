@@ -26,7 +26,7 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        searchViewModel = new SearchViewModel("hello search");
+        searchViewModel = new SearchViewModel("作业中");
         FragmentSearchBinding searchBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_search, container, false);
         // set binding view model
         searchBinding.setSearchModel(searchViewModel);
