@@ -18,7 +18,7 @@ public class WorkerPool {
         workingQueue2 = Executors.newSingleThreadExecutor(Executors.defaultThreadFactory());
     }
 
-    public WorkerPool getInstance() {
+    public static WorkerPool getInstance() {
         if (instance == null) {
             synchronized (WorkerPool.class) {
                 if (instance == null) {

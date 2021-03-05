@@ -15,11 +15,33 @@ public class HttpManager {
     private StringBuilder sbCategoryUrl = new StringBuilder();
     private StringBuilder sbArticlesUrl = new StringBuilder();
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    private String language = "zh-hans";
+
     OkHttpClient httpClient = new OkHttpClient();
     private final HttpUrl.Builder categoriesUrl;
     private final HttpUrl.Builder articlesUrlBuilder;
+    private static HttpManager instance;
 
-    public HttpManager(String language) {
+    public static HttpManager getInstance(){
+        if (instance == null) {
+            synchronized (HttpManager.class) {
+                if (instance == null) {
+                    instance = new HttpManager();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public HttpManager() {
         sbCategoryUrl.append(BASE_URL);
         sbArticlesUrl.append(BASE_URL);
         if (HttpConfig.LANGUAGE_EN.equalsIgnoreCase(language)) {
@@ -30,7 +52,7 @@ public class HttpManager {
             sbArticlesUrl.append(HttpConfig.LANGUAGE_ZH);
         }
         sbCategoryUrl.append("/api/archive");
-        sbArticlesUrl.append("/api/archive");
+        sbArticlesUrl.append("/api/archive/");
         categoriesUrl = Objects.requireNonNull(
                 HttpUrl.parse(sbCategoryUrl.append("/categories").toString()).newBuilder());
         articlesUrlBuilder = Objects.requireNonNull(
@@ -44,7 +66,7 @@ public class HttpManager {
     }
 
     @WorkerThread
-    public Response getNewsArticles(int pageNo, int itemNo) throws IOException {
+    public Response getNewsList(int pageNo, int itemNo) throws IOException {
         articlesUrlBuilder.removeAllQueryParameters("page");
         articlesUrlBuilder.removeAllQueryParameters("pageSize");
         articlesUrlBuilder.removeAllQueryParameters("c");
@@ -56,6 +78,12 @@ public class HttpManager {
         Request req = new Request.Builder().url(articlesUrlBuilder.build()).build();
         return httpClient.newCall(req).execute();
 
+    }
+
+    @WorkerThread
+    public Response getNewsDetail(int id) throws IOException {
+        Request req = new Request.Builder().url(sbArticlesUrl + String.valueOf(id)).build();
+        return httpClient.newCall(req).execute();
     }
 
 }

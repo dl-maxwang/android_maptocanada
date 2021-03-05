@@ -1,68 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
-        android:id="@+id/iv_news_img"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"
-        android:src="@mipmap/item_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <data>
 
-    <TextView
-        android:id="@+id/tv_news_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:text="CEC一次性捞走近28000人"
-        android:textColor="@color/text_color"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_news_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_weight="0.5"
-        app:layout_constraintStart_toEndOf="@+id/iv_news_img"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <variable
+            name="newsItem"
+            type="com.zhen.maptocanada.data.news.NewsListData.NewsPreviewBean" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_content_preview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="5dp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:text="2月13日，没想到加拿大联邦移民局居然周六加班给大家送来大礼！令人难以置信的一口气把ee池里的的CEC申请人全部邀请了！邀请人数达到了空前，不知道是不是绝后的近28000人！分数线更是低到了令人发指的75分！也就是说只要有一年加拿大经验的符合CEC要求，并且已经入池的申请人这次都可以申请P"
-        android:textSize="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_news_item_date"
-        app:layout_constraintEnd_toEndOf="@+id/tv_news_title"
-        app:layout_constraintStart_toStartOf="@+id/tv_news_title"
-        app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
-        app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_news_item_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date: 2021.02.21"
-        android:textSize="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_news_img"
-        app:layout_constraintRight_toRightOf="@id/tv_content_preview"
-        app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/iv_news_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/item_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_news_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@{newsItem.content}"
+            android:textColor="@color/text_color"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_news_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_news_img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_content_preview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{newsItem.description}"
+            android:textSize="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_news_item_date"
+            app:layout_constraintEnd_toEndOf="@+id/tv_news_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_news_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_news_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{newsItem.ts_publish}"
+            android:textSize="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_news_img"
+            app:layout_constraintRight_toRightOf="@id/tv_content_preview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
