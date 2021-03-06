@@ -3,23 +3,23 @@
 
     <item
         android:id="@+id/navigation_news"
-        android:icon="@android:drawable/ic_menu_week"
+        android:icon="@drawable/ic_newspaper_regular"
         android:title="@string/title_news" />
 
     <item
         android:id="@+id/navigation_commonsense"
-        android:icon="@android:drawable/ic_menu_compass"
+        android:icon="@drawable/ic_brain_solid"
         android:title="@string/title_common_sense"
         />
 
     <item
         android:id="@+id/navigation_crs"
-        android:icon="@android:drawable/ic_popup_sync"
+        android:icon="@drawable/ic_user_edit_solid"
         android:title="@string/title_self_crs" />
 
     <item
         android:id="@+id/navigation_search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/ic_search_solid"
         android:title="@string/search" />
 
 </menu>
