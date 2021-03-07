@@ -5,8 +5,223 @@
     <string name="title_self_crs">自我评分</string>
     <string name="search">搜索</string>
     <string name="btn_start">开始</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="crs_martial_status">婚姻状态</string>
+    <string name="crs_age_title">年龄</string>
+    <string name="crs_age_description">那么首先能告诉我你的年龄吗<br /> 如果用作评估，请选择所有条件都满足时入池时的年龄<br />
+    例如当前年龄30，要预估在加拿大读书两年，工作两年后的得分，那么填入34。</string>
+    <string name="crs_edu_title">教育背景</string>
+    <string name="crs_edu_description">有读过书吗</string>
+    <string name="crs_edu_item_less_than_highschool">高中都没毕业</string>
+    <string name="crs_edu_item_highschool">高中文凭</string>
+    <string name="crs_edu_item_one_year_post_secondary">高中以上大专或学院的一年制文凭或证书</string>
+    <string name="crs_edu_item_two_year_post_secondary">两年制的大专，学院或者大学的学位，文凭或证书</string>
+    <string name="crs_edu_item_three_year_post_secondary">本科学士或三年以上大专，学院的文凭及证书</string>
+    <string name="crs_edu_item_two_more_cert">两个以上的证书，文凭或学位。期中一个必须三年及三年制以上</string>
+    <string name="crs_edu_item_master">硕士学位，或者医药，兽医，牙医，验光，法律，脊骨神经医学，药剂学</string>
+    <string name="crs_edu_item_phd">博士（不是小学的那种）</string>
+    <string name="crs_language1_listening_title">语言1 听力</string>
+    <string name="crs_language1_listening_description">雅思G类 听力</string>
+    <string name="crs_language1_listening_less_clb4">听力 - 低于4.5 - clb4</string>
+    <string name="crs_language1_listening_clb5">听力5.0 - clb5</string>
+    <string name="crs_language1_listening_clb6">听力5.5 - clb6</string>
+    <string name="crs_language1_listening_clb7">听力6.0 - clb7</string>
+    <string name="crs_language1_listening_clb8">听力7.5 - clb8</string>
+    <string name="crs_language1_listening_clb9">听力8.0 - clb9</string>
+    <string name="crs_language1_listening_clb10">听力8.5以上 - clb10</string>
+    <!-- language 1 reading -->
+    <string name="crs_language1_reading_less_clb4">阅读 - 低于3.5 - clb4</string>
+    <string name="crs_language1_reading_clb5">阅读 4.0 - clb5</string>
+    <string name="crs_language1_reading_clb6">阅读 5.0 - clb6</string>
+    <string name="crs_language1_reading_clb7">阅读 6.0 - clb7</string>
+    <string name="crs_language1_reading_clb8">阅读 6.5 - clb8</string>
+    <string name="crs_language1_reading_clb9">阅读 7.0 - clb9</string>
+    <string name="crs_language1_reading_clb10">阅读 8.0 - clb10</string>
+
+    <!-- language 1 writing -->
+    <string name="crs_language1_writing_less_clb4">写作 - 低于4.0 - clb4</string>
+    <string name="crs_language1_writing_clb5">写作 5.0 - clb5</string>
+    <string name="crs_language1_writing_clb6">写作 5.5 - clb6</string>
+    <string name="crs_language1_writing_clb7">写作 6.0 - clb7</string>
+    <string name="crs_language1_writing_clb8">写作 6.5 - clb8</string>
+    <string name="crs_language1_writing_clb9">写作 7.0 - clb9</string>
+    <string name="crs_language1_writing_clb10">写作 7.5 及以上 - clb10</string>
+
+    <!-- language 1 speaking -->
+    <string name="crs_language1_speaking_less_clb4">口语 - 低于4.0 - clb4</string>
+    <string name="crs_language1_speaking_clb5">口语 5.0 - clb5</string>
+    <string name="crs_language1_speaking_clb6">口语 5.5 - clb6</string>
+    <string name="crs_language1_speaking_clb7">口语 6.0 - clb7</string>
+    <string name="crs_language1_speaking_clb8">口语 6.5 - clb8</string>
+    <string name="crs_language1_speaking_clb9">口语 7.0 - clb9</string>
+    <string name="crs_language1_speaking_clb10">口语 7.5 及以上 - clb10</string>
+    <string name="crs_language1_reading_title">阅读</string>
+    <string name="crs_language1_reading_description">雅思G类 阅读</string>
+    <string name="crs_language1_speaking_title">口语</string>
+    <string name="crs_language1_speaking_description">雅思G类 口语</string>
+    <string name="crs_language1_writing_title">阅读</string>
+    <string name="crs_language1_writing_description">雅思G类 写作</string>
+    <string name="crs_canadian_exp">加拿大工作经验</string>
+    <string name="crs_canadian_exp_desc"><![CDATA[加拿大<b>境内</br>持有合法工签的<b>全职</b>工作经验，
+    工作必须是NOC 0，A，B类别
+    <br/>NOC网站请参考：<a href=\"\"https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html>NOC查询</a>]]></string>
+    <string name="crs_candian_exp_less_one_year">少于1年</string>
+    <string name="crs_candian_exp_one_year">一年</string>
+    <string name="crs_candian_exp_two_year">两年</string>
+    <string name="crs_candian_exp_three_year">三年</string>
+    <string name="crs_candian_exp_four_year">四年</string>
+    <string name="crs_candian_exp_five_year">五年以上</string>
+    <string name="crs_candian_exp_five_more_year">五年以上</string>
+    <string name="crs_partener_edu_title">配偶教育水平</string>
+    <string name="crs_activity_title">Comprehensive Ranking System<br />技术移民评分工具
+    </string>
+    <string name="years_old">岁</string>
+    <string name="next_step">下一步</string>
+    <string name="has_can_edu">是否有加拿大学历</string>
+    <string name="crs_can_edu_secondary_school_or_less">高中及高中以下学历</string>
+    <string name="crs_can_edu_one_or_two_year_cert">一年或两年制文凭或证书</string>
+    <string name="crs_can_edu_three_or_more_year_cert">三年或三年以上的文凭，学位；或研究生及以上学历</string>
+    <string name="crs_language_title">语言水平</string>
+    <string name="crs_language_desc">加拿大的官方语言是英语及法语<br />这里暂时只提供雅思G类成绩和CELPIP-G两类测试的评估</string>
+    <string name="crs_add_another_language">添加TEF或TCF成绩</string>
+
+    <string name="crs_fr_reading_less_clb4">TEF &lt; 121, TCF &lt; 342</string>
+    <string name="crs_fr_reading_clb4">TEF 121–150, TCF 342–374</string>
+    <string name="crs_fr_reading_clb5">TEF 151–180, TCF 375–405</string>
+    <string name="crs_fr_reading_clb6">TEF 181–206, TCF 406–452</string>
+    <string name="crs_fr_reading_clb7">TEF 207–232, TCF 453–498</string>
+    <string name="crs_fr_reading_clb8">TEF 233–247, TCF 499–523</string>
+    <string name="crs_fr_reading_clb9">TEF 248–262, TCF 524–548</string>
+    <string name="crs_fr_reading_clb10">TEF 263–300, TCF 549–699</string>
+
+    <string name="crs_fr_writing_less_clb4">TEF &lt; 181, TCF &lt; 4</string>
+    <string name="crs_fr_writing_clb4">TEF 181–225, TCF 4–5</string>
+    <string name="crs_fr_writing_clb5">TEF 226–270, TCF 6</string>
+    <string name="crs_fr_writing_clb6">TEF 271–309, TCF 7–9</string>
+    <string name="crs_fr_writing_clb7">TEF 310–348, TCF 10–11</string>
+    <string name="crs_fr_writing_clb8">TEF 349–370, TCF 12–13</string>
+    <string name="crs_fr_writing_clb9">TEF 371–392, TCF 14–15</string>
+    <string name="crs_fr_writing_clb10">TEF 393–450, TCF 16–20</string>
+
+    <string name="crs_fr_listening_less_clb4">TEF &lt; 145, TCF &lt; 331</string>
+    <string name="crs_fr_listening_clb4">TEF 145–180, TCF 331–368</string>
+    <string name="crs_fr_listening_clb5">TEF 181–216, TCF 369–397</string>
+    <string name="crs_fr_listening_clb6">TEF 217–248, TCF 398–457</string>
+    <string name="crs_fr_listening_clb7">TEF 249–279, TCF 458–502</string>
+    <string name="crs_fr_listening_clb8">TEF 280–297, TCF 503–522</string>
+    <string name="crs_fr_listening_clb9">TEF 298–315, TCF 523–548</string>
+    <string name="crs_fr_listening_clb10">TEF 316–360, TCF 549–699</string>
+
+    <string name="crs_fr_speaking_less_clb4">TEF &lt; 181, TCF &lt; 4</string>
+    <string name="crs_fr_speaking_clb4">TEF 181–225, TCF 331–368</string>
+    <string name="crs_fr_speaking_clb5">TEF 226–270, TCF 369–397</string>
+    <string name="crs_fr_speaking_clb6">TEF 271–309, TCF 398–457</string>
+    <string name="crs_fr_speaking_clb7">TEF 310–348, TCF 458–502</string>
+    <string name="crs_fr_speaking_clb8">TEF 349–370, TCF 503–522</string>
+    <string name="crs_fr_speaking_clb9">TEF 371–392, TCF 523–548</string>
+    <string name="crs_fr_speaking_clb10">TEF 393–450, TCF 549–699</string>
+
+    <string-array name="crs_fr_language_level_listening">
+        <item>@string/crs_fr_listening_less_clb4</item>
+        <item>@string/crs_fr_listening_clb4</item>
+        <item>@string/crs_fr_listening_clb5</item>
+        <item>@string/crs_fr_listening_clb6</item>
+        <item>@string/crs_fr_listening_clb7</item>
+        <item>@string/crs_fr_listening_clb8</item>
+        <item>@string/crs_fr_listening_clb9</item>
+        <item>@string/crs_fr_listening_clb10</item>
+    </string-array>
+
+    <string-array name="crs_fr_language_level_reading">
+        <item>@string/crs_fr_reading_less_clb4</item>
+        <item>@string/crs_fr_reading_clb4</item>
+        <item>@string/crs_fr_reading_clb5</item>
+        <item>@string/crs_fr_reading_clb6</item>
+        <item>@string/crs_fr_reading_clb7</item>
+        <item>@string/crs_fr_reading_clb8</item>
+        <item>@string/crs_fr_reading_clb9</item>
+        <item>@string/crs_fr_reading_clb10</item>
+    </string-array>
+
+    <string-array name="crs_fr_language_level_writing">
+        <item>@string/crs_fr_writing_less_clb4</item>
+        <item>@string/crs_fr_writing_clb4</item>
+        <item>@string/crs_fr_writing_clb5</item>
+        <item>@string/crs_fr_writing_clb6</item>
+        <item>@string/crs_fr_writing_clb7</item>
+        <item>@string/crs_fr_writing_clb8</item>
+        <item>@string/crs_fr_writing_clb9</item>
+        <item>@string/crs_fr_writing_clb10</item>
+    </string-array>
+
+    <string-array name="crs_fr_language_level_speaking">
+        <item>@string/crs_fr_speaking_less_clb4</item>
+        <item>@string/crs_fr_speaking_clb4</item>
+        <item>@string/crs_fr_speaking_clb5</item>
+        <item>@string/crs_fr_speaking_clb6</item>
+        <item>@string/crs_fr_speaking_clb7</item>
+        <item>@string/crs_fr_speaking_clb8</item>
+        <item>@string/crs_fr_speaking_clb9</item>
+        <item>@string/crs_fr_speaking_clb10</item>
+    </string-array>
+
+
+    <string-array name="crs_education">
+        <item>@string/crs_edu_item_less_than_highschool</item>
+        <item>@string/crs_edu_item_highschool</item>
+        <item>@string/crs_edu_item_one_year_post_secondary</item>
+        <item>@string/crs_edu_item_two_year_post_secondary</item>
+        <item>@string/crs_edu_item_three_year_post_secondary</item>
+        <item>@string/crs_edu_item_two_more_cert</item>
+        <item>@string/crs_edu_item_master</item>
+        <item>@string/crs_edu_item_phd</item>
+    </string-array>
+
+    <string-array name="crs_can_edu_level">
+        <item>@string/crs_can_edu_secondary_school_or_less</item>
+        <item>@string/crs_can_edu_one_or_two_year_cert</item>
+        <item>@string/crs_can_edu_three_or_more_year_cert</item>
+    </string-array>
+
+    <string-array name="crs_language_level_listening">
+        <item>@string/crs_language1_listening_less_clb4</item>
+        <item>@string/crs_language1_listening_clb5</item>
+        <item>@string/crs_language1_listening_clb6</item>
+        <item>@string/crs_language1_listening_clb7</item>
+        <item>@string/crs_language1_listening_clb8</item>
+        <item>@string/crs_language1_listening_clb9</item>
+        <item>@string/crs_language1_listening_clb10</item>
+    </string-array>
+
+    <string-array name="crs_language_level_reading">
+        <item>@string/crs_language1_reading_less_clb4</item>
+        <item>@string/crs_language1_reading_clb5</item>
+        <item>@string/crs_language1_reading_clb6</item>
+        <item>@string/crs_language1_reading_clb7</item>
+        <item>@string/crs_language1_reading_clb8</item>
+        <item>@string/crs_language1_reading_clb9</item>
+        <item>@string/crs_language1_reading_clb10</item>
+    </string-array>
+
+    <string-array name="crs_language_level_writing">
+        <item>@string/crs_language1_writing_less_clb4</item>
+        <item>@string/crs_language1_writing_clb5</item>
+        <item>@string/crs_language1_writing_clb6</item>
+        <item>@string/crs_language1_writing_clb7</item>
+        <item>@string/crs_language1_writing_clb8</item>
+        <item>@string/crs_language1_writing_clb9</item>
+        <item>@string/crs_language1_writing_clb10</item>
+    </string-array>
+
+    <string-array name="crs_language_level_speaking">
+        <item>@string/crs_language1_speaking_less_clb4</item>
+        <item>@string/crs_language1_speaking_clb5</item>
+        <item>@string/crs_language1_speaking_clb6</item>
+        <item>@string/crs_language1_speaking_clb7</item>
+        <item>@string/crs_language1_speaking_clb8</item>
+        <item>@string/crs_language1_speaking_clb9</item>
+        <item>@string/crs_language1_speaking_clb10</item>
+    </string-array>
+
 </resources>

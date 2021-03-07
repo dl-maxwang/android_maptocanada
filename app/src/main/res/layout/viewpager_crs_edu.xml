@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="UserData"
+            type="com.zhen.maptocanada.ui.crs.data.CrsUserData" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40dp"
+            tools:context=".ui.crs.CrsRankingActivity">
+
+            <TextView
+                android:id="@+id/tv_crs_edu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crs_edu_title"
+                android:textSize="28dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_crs_edu_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/crs_edu_description"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="@id/tv_crs_edu_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_crs_edu_title" />
+
+            <Spinner
+                android:id="@+id/spin_choose_edu_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_education"
+                app:layout_constraintTop_toBottomOf="@id/tv_crs_edu_desc" />
+
+            <CheckBox
+                android:id="@+id/cb_has_can_edu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={UserData.hasCanEdu}"
+                android:text="@string/has_can_edu"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_edu_level" />
+
+            <Spinner
+                android:id="@+id/spin_can_edu_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_can_edu_level"
+                app:layout_constraintTop_toBottomOf="@id/cb_has_can_edu" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

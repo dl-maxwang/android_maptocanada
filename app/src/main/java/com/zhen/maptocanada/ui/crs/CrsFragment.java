@@ -1,5 +1,6 @@
 package com.zhen.maptocanada.ui.crs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,8 @@ public class CrsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         btnStartCRSRanking = getView().findViewById(R.id.btn_crs_start);
         btnStartCRSRanking.setOnClickListener(v->{
-
+            Intent i = new Intent(CrsFragment.this.getActivity(), CrsRankingActivity.class);
+            startActivity(i);
         });
     }
 }

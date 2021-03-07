@@ -3,7 +3,6 @@ package com.zhen.maptocanada.ui.news;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.zhen.maptocanada.R;
-import com.zhen.maptocanada.data.DataKVBean;
+import com.zhen.maptocanada.data.Consts;
 import com.zhen.maptocanada.data.news.NewsHandler;
 import com.zhen.maptocanada.data.news.NewsListData;
 import com.zhen.maptocanada.data.news.NewsListData.NewsPreviewBean;
@@ -108,7 +107,7 @@ public class NewsFragment extends Fragment {
                         View childViewUnder = rv.findChildViewUnder(e.getX(), e.getY());
                         int newsId = newsItem.getId();
                         Intent i = new Intent(NewsFragment.this.getActivity(), NewsDetailActivity.class);
-                        i.putExtra(DataKVBean.KEY_NEWS_ID, newsId);
+                        i.putExtra(Consts.KEY_NEWS_ID, newsId);
                         ActivityOptionsCompat activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),
                                 childViewUnder.findViewById(R.id.tv_news_item_title), NewsDetailActivity.VIEW_NAME_HEADER_TITLE);
                         ActivityCompat.startActivity(NewsFragment.this.getActivity(), i, activityOptions.toBundle());
