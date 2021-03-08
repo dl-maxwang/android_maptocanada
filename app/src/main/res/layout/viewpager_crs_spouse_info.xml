@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.Html" />
+
+        <variable
+            name="UserData"
+            type="com.zhen.maptocanada.ui.crs.data.CrsUserData" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_crs_spouse_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crs_spouse_title"
+                android:textSize="28dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/cb_crs_spouse_together_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={UserData.spouseComeAlong}"
+                android:text="@string/crs_spouse_come_along"
+                app:layout_constraintTop_toBottomOf="@id/tv_crs_spouse_title" />
+
+            <TextView
+                android:id="@+id/tv_crs_spouse_edu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crs_spouse_edu_title"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/cb_crs_spouse_together_title" />
+
+            <Spinner
+                android:id="@+id/spin_crs_spouse_edu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_education"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/tv_crs_spouse_edu_title" />
+
+            <TextView
+                android:id="@+id/tv_crs_spouse_canadian_work_exp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/crs_spouse_canada_work_exp_title"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_crs_spouse_edu" />
+
+            <Spinner
+                android:id="@+id/spin_crs_spouse_can_exp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_canadian_work_exp_years"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/tv_crs_spouse_canadian_work_exp" />
+
+            <TextView
+                android:id="@+id/tv_crs_spouse_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/crs_spouse_language_eng_title"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_crs_spouse_can_exp" />
+
+            <Spinner
+                android:id="@+id/spin_choose_listening_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_language_level_listening"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/tv_crs_spouse_language" />
+
+            <Spinner
+                android:id="@+id/spin_choose_reading_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_language_level_reading"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_listening_level" />
+
+            <Spinner
+                android:id="@+id/spin_choose_writing_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_language_level_writing"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_reading_level" />
+
+            <Spinner
+                android:id="@+id/spin_choose_speaking_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_language_level_speaking"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_writing_level" />
+
+            <CheckBox
+                android:id="@+id/cb_crs_spous_has_fr_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={UserData.spouseHasFrTestScore}"
+                android:text="@string/crs_spouse_fr_level_checkbox_desc"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_speaking_level" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_crs_spouse_fr_level_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{UserData.spouseComeAlong?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/cb_crs_spous_has_fr_test">
+
+                <TextView
+                    android:id="@+id/tv_crs_spouse_fr_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crs_spouse_fr_level_title"
+                    android:visibility="@{UserData.spouseHasFrTestScore?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/spin_choose_fr_listening_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:entries="@array/crs_fr_language_level_listening"
+                    android:visibility="@{UserData.spouseHasFrTestScore?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/tv_crs_spouse_fr_level" />
+
+                <Spinner
+                    android:id="@+id/spin_choose_fr_reading_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/crs_fr_language_level_reading"
+                    android:visibility="@{UserData.spouseHasFrTestScore?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/spin_choose_fr_listening_level" />
+
+                <Spinner
+                    android:id="@+id/spin_choose_fr_writing_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/crs_fr_language_level_writing"
+                    android:visibility="@{UserData.spouseHasFrTestScore?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/spin_choose_fr_reading_level" />
+
+                <Spinner
+                    android:id="@+id/spin_choose_fr_speaking_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/crs_fr_language_level_speaking"
+                    android:visibility="@{UserData.spouseHasFrTestScore?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/spin_choose_fr_writing_level" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:text="@string/crs_submit"
+                android:id="@+id/btn_crs_calculate_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/cl_crs_spouse_fr_level_container" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

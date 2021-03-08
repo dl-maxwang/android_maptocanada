@@ -2,14 +2,18 @@ package com.zhen.maptocanada.ui.crs;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.zhen.maptocanada.R;
 import com.zhen.maptocanada.databinding.ActivityCrsRankingBinding;
+import com.zhen.maptocanada.ui.crs.data.CrsRankingVPAdatper;
 import com.zhen.maptocanada.ui.crs.data.CrsUserData;
 
 public class CrsRankingActivity extends AppCompatActivity {
+
+    // todo: write and restore sp
 
     private CrsUserData userData = new CrsUserData();
 
@@ -20,5 +24,9 @@ public class CrsRankingActivity extends AppCompatActivity {
                 getLayoutInflater(), R.layout.activity_crs_ranking,
                 null, false);
         setContentView(crsRankingBinding.getRoot());
+
+        ViewPager2 vpCrs = crsRankingBinding.vpCrsRanking;
+        CrsRankingVPAdatper adapter = new CrsRankingVPAdatper(this, userData);
+        vpCrs.setAdapter(adapter);
     }
 }

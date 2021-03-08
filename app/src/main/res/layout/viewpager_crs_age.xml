@@ -8,6 +8,8 @@
 
         <import type="android.view.View" />
 
+        <import type="android.text.Html" />
+
         <variable
             name="UserData"
             type="com.zhen.maptocanada.ui.crs.data.CrsUserData" />
@@ -16,7 +18,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="650dp">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/crs_age_description"
+                android:text="@{Html.fromHtml(@string/crs_age_description)}"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_crs_age_title"
                 app:layout_constraintTop_toBottomOf="@id/tv_crs_age_title" />
@@ -67,13 +69,13 @@
                 app:layout_constraintTop_toTopOf="@id/et_crs_age" />
 
             <TextView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="哇 这么臭的学生有移民的必要吗"
                 android:textAlignment="center"
                 android:textSize="10dp"
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_crs_age" />
 

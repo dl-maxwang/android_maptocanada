@@ -14,12 +14,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:padding="40dp"
             tools:context=".ui.crs.CrsRankingActivity">
 
@@ -50,6 +50,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_crs_edu_desc" />
 
             <CheckBox
+                android:layout_marginTop="15dp"
                 android:id="@+id/cb_has_can_edu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:entries="@array/crs_can_edu_level"
+                android:visibility="@{UserData.hasCanEdu?View.VISIBLE:View.GONE}"
                 app:layout_constraintTop_toBottomOf="@id/cb_has_can_edu" />
 
 

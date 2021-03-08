@@ -9,8 +9,11 @@
 
     <string name="crs_martial_status">婚姻状态</string>
     <string name="crs_age_title">年龄</string>
-    <string name="crs_age_description">那么首先能告诉我你的年龄吗<br /> 如果用作评估，请选择所有条件都满足时入池时的年龄<br />
-    例如当前年龄30，要预估在加拿大读书两年，工作两年后的得分，那么填入34。</string>
+    <string name="crs_age_description"><![CDATA[那么首先能告诉我你的年龄吗<br/> <ul>
+        <li>&nbsp;&nbsp;如果用作评估，请选择预估满足条件时的年龄。</li>
+        <li>&nbsp;&nbsp;例如当前年龄30，要预估在加拿大读书两年，工作两年后的得分，那么填入34。</li>
+    </ul>
+    ]]></string>
     <string name="crs_edu_title">教育背景</string>
     <string name="crs_edu_description">有读过书吗</string>
     <string name="crs_edu_item_less_than_highschool">高中都没毕业</string>
@@ -18,8 +21,8 @@
     <string name="crs_edu_item_one_year_post_secondary">高中以上大专或学院的一年制文凭或证书</string>
     <string name="crs_edu_item_two_year_post_secondary">两年制的大专，学院或者大学的学位，文凭或证书</string>
     <string name="crs_edu_item_three_year_post_secondary">本科学士或三年以上大专，学院的文凭及证书</string>
-    <string name="crs_edu_item_two_more_cert">两个以上的证书，文凭或学位。期中一个必须三年及三年制以上</string>
-    <string name="crs_edu_item_master">硕士学位，或者医药，兽医，牙医，验光，法律，脊骨神经医学，药剂学</string>
+    <string name="crs_edu_item_two_more_cert">两个以上的证书，文凭或学位。<br />期中一个必须三年及三年制以上</string>
+    <string name="crs_edu_item_master">硕士学位，或者医药，兽医，牙医，验光，<br /> 法律，脊骨神经医学，药剂学</string>
     <string name="crs_edu_item_phd">博士（不是小学的那种）</string>
     <string name="crs_language1_listening_title">语言1 听力</string>
     <string name="crs_language1_listening_description">雅思G类 听力</string>
@@ -62,7 +65,7 @@
     <string name="crs_language1_speaking_description">雅思G类 口语</string>
     <string name="crs_language1_writing_title">阅读</string>
     <string name="crs_language1_writing_description">雅思G类 写作</string>
-    <string name="crs_canadian_exp">加拿大工作经验</string>
+    <string name="crs_canadian_exp_title">加拿大工作经验</string>
     <string name="crs_canadian_exp_desc"><![CDATA[加拿大<b>境内</br>持有合法工签的<b>全职</b>工作经验，
     工作必须是NOC 0，A，B类别
     <br/>NOC网站请参考：<a href=\"\"https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html>NOC查询</a>]]></string>
@@ -71,7 +74,6 @@
     <string name="crs_candian_exp_two_year">两年</string>
     <string name="crs_candian_exp_three_year">三年</string>
     <string name="crs_candian_exp_four_year">四年</string>
-    <string name="crs_candian_exp_five_year">五年以上</string>
     <string name="crs_candian_exp_five_more_year">五年以上</string>
     <string name="crs_partener_edu_title">配偶教育水平</string>
     <string name="crs_activity_title">Comprehensive Ranking System<br />技术移民评分工具
@@ -83,44 +85,87 @@
     <string name="crs_can_edu_one_or_two_year_cert">一年或两年制文凭或证书</string>
     <string name="crs_can_edu_three_or_more_year_cert">三年或三年以上的文凭，学位；或研究生及以上学历</string>
     <string name="crs_language_title">语言水平</string>
-    <string name="crs_language_desc">加拿大的官方语言是英语及法语<br />这里暂时只提供雅思G类成绩和CELPIP-G两类测试的评估</string>
+    <string name="crs_language_desc">加拿大的官方语言是英语及法语</string>
     <string name="crs_add_another_language">添加TEF或TCF成绩</string>
 
-    <string name="crs_fr_reading_less_clb4">TEF &lt; 121, TCF &lt; 342</string>
-    <string name="crs_fr_reading_clb4">TEF 121–150, TCF 342–374</string>
-    <string name="crs_fr_reading_clb5">TEF 151–180, TCF 375–405</string>
-    <string name="crs_fr_reading_clb6">TEF 181–206, TCF 406–452</string>
-    <string name="crs_fr_reading_clb7">TEF 207–232, TCF 453–498</string>
-    <string name="crs_fr_reading_clb8">TEF 233–247, TCF 499–523</string>
-    <string name="crs_fr_reading_clb9">TEF 248–262, TCF 524–548</string>
-    <string name="crs_fr_reading_clb10">TEF 263–300, TCF 549–699</string>
+    <string name="crs_fr_reading_less_clb4">阅读 TEF &lt; 121, TCF &lt; 342</string>
+    <string name="crs_fr_reading_clb4">阅读 TEF 121–150, TCF 342–374</string>
+    <string name="crs_fr_reading_clb5">阅读 TEF 151–180, TCF 375–405</string>
+    <string name="crs_fr_reading_clb6">阅读 TEF 181–206, TCF 406–452</string>
+    <string name="crs_fr_reading_clb7">阅读 TEF 207–232, TCF 453–498</string>
+    <string name="crs_fr_reading_clb8">阅读 TEF 233–247, TCF 499–523</string>
+    <string name="crs_fr_reading_clb9">阅读 TEF 248–262, TCF 524–548</string>
+    <string name="crs_fr_reading_clb10">阅读 TEF 263–300, TCF 549–699</string>
 
-    <string name="crs_fr_writing_less_clb4">TEF &lt; 181, TCF &lt; 4</string>
-    <string name="crs_fr_writing_clb4">TEF 181–225, TCF 4–5</string>
-    <string name="crs_fr_writing_clb5">TEF 226–270, TCF 6</string>
-    <string name="crs_fr_writing_clb6">TEF 271–309, TCF 7–9</string>
-    <string name="crs_fr_writing_clb7">TEF 310–348, TCF 10–11</string>
-    <string name="crs_fr_writing_clb8">TEF 349–370, TCF 12–13</string>
-    <string name="crs_fr_writing_clb9">TEF 371–392, TCF 14–15</string>
-    <string name="crs_fr_writing_clb10">TEF 393–450, TCF 16–20</string>
+    <string name="crs_fr_writing_less_clb4">写作 TEF &lt; 181, TCF &lt; 4</string>
+    <string name="crs_fr_writing_clb4">写作 TEF 181–225, TCF 4–5</string>
+    <string name="crs_fr_writing_clb5">写作 TEF 226–270, TCF 6</string>
+    <string name="crs_fr_writing_clb6">写作 TEF 271–309, TCF 7–9</string>
+    <string name="crs_fr_writing_clb7">写作 TEF 310–348, TCF 10–11</string>
+    <string name="crs_fr_writing_clb8">写作 TEF 349–370, TCF 12–13</string>
+    <string name="crs_fr_writing_clb9">写作 TEF 371–392, TCF 14–15</string>
+    <string name="crs_fr_writing_clb10">写作 TEF 393–450, TCF 16–20</string>
 
-    <string name="crs_fr_listening_less_clb4">TEF &lt; 145, TCF &lt; 331</string>
-    <string name="crs_fr_listening_clb4">TEF 145–180, TCF 331–368</string>
-    <string name="crs_fr_listening_clb5">TEF 181–216, TCF 369–397</string>
-    <string name="crs_fr_listening_clb6">TEF 217–248, TCF 398–457</string>
-    <string name="crs_fr_listening_clb7">TEF 249–279, TCF 458–502</string>
-    <string name="crs_fr_listening_clb8">TEF 280–297, TCF 503–522</string>
-    <string name="crs_fr_listening_clb9">TEF 298–315, TCF 523–548</string>
-    <string name="crs_fr_listening_clb10">TEF 316–360, TCF 549–699</string>
+    <string name="crs_fr_listening_less_clb4">听力 TEF &lt; 145, TCF &lt; 331</string>
+    <string name="crs_fr_listening_clb4">听力 TEF 145–180, TCF 331–368</string>
+    <string name="crs_fr_listening_clb5">听力 TEF 181–216, TCF 369–397</string>
+    <string name="crs_fr_listening_clb6">听力 TEF 217–248, TCF 398–457</string>
+    <string name="crs_fr_listening_clb7">听力 TEF 249–279, TCF 458–502</string>
+    <string name="crs_fr_listening_clb8">听力 TEF 280–297, TCF 503–522</string>
+    <string name="crs_fr_listening_clb9">听力 TEF 298–315, TCF 523–548</string>
+    <string name="crs_fr_listening_clb10">听力 TEF 316–360, TCF 549–699</string>
 
-    <string name="crs_fr_speaking_less_clb4">TEF &lt; 181, TCF &lt; 4</string>
-    <string name="crs_fr_speaking_clb4">TEF 181–225, TCF 331–368</string>
-    <string name="crs_fr_speaking_clb5">TEF 226–270, TCF 369–397</string>
-    <string name="crs_fr_speaking_clb6">TEF 271–309, TCF 398–457</string>
-    <string name="crs_fr_speaking_clb7">TEF 310–348, TCF 458–502</string>
-    <string name="crs_fr_speaking_clb8">TEF 349–370, TCF 503–522</string>
-    <string name="crs_fr_speaking_clb9">TEF 371–392, TCF 523–548</string>
-    <string name="crs_fr_speaking_clb10">TEF 393–450, TCF 549–699</string>
+    <string name="crs_fr_speaking_less_clb4">口语 TEF &lt; 181, TCF &lt; 4</string>
+    <string name="crs_fr_speaking_clb4">口语 TEF 181–225, TCF 331–368</string>
+    <string name="crs_fr_speaking_clb5">口语 TEF 226–270, TCF 369–397</string>
+    <string name="crs_fr_speaking_clb6">口语 TEF 271–309, TCF 398–457</string>
+    <string name="crs_fr_speaking_clb7">口语 TEF 310–348, TCF 458–502</string>
+    <string name="crs_fr_speaking_clb8">口语 TEF 349–370, TCF 503–522</string>
+    <string name="crs_fr_speaking_clb9">口语 TEF 371–392, TCF 523–548</string>
+    <string name="crs_fr_speaking_clb10">口语 TEF 393–450, TCF 549–699</string>
+    <string name="crs_foreign_work_title">海外工作经验</string>
+    <string name="crs_foreign_work_desc">在任意地区的有效工作经验，必须属于NOC0, A, B分类</string>
+    <string name="crs_foreign_work_less_than_1_year">一年及一年以下</string>
+    <string name="crs_foreign_work_2_year">两年</string>
+    <string name="crs_foreign_work_3_year_more">三年及三年以上</string>
+    <string name="crs_lmia_title">Labour Market Impact Assessment</string>
+    <string name="crs_lmia_desc">你是否拥有一份LMIA的工作合同。注意普通工作合同不含LMIA，也很难取得LMIA</string>
+    <string name="crs_lmia_checkbox_desc">俺有LMIA</string>
+    <string name="crs_has_nomination">省提名Provincial Nomination</string>
+    <string name="crs_has_nomination_desc">俺被省提名了</string>
+    <string name="crs_pn_desc">省提名是各省的移民项目（待完善）</string>
+    <string name="crs_any_pr_title">加拿大的亲属</string>
+    <string name="crs_any_pr_desc"><![CDATA[加拿大的亲属必须是:<br />
+        <ul>
+            <li> 配偶，包含普通法伴侣 </ li>
+            <li> 18岁以上的亲生/领养兄弟，姐妹 </ li>
+            <li> 有共同父母 </ li>
+        </ ul>
+    ]]></string>
+    <string name="crs_has_any_pr_relative_checkbox_desc">我有符合以上条件的亲属</string>
+    <string name="crs_spouse_title">伴侣信息（双打移民）</string>
+    <string name="crs_spouse_come_along">我已婚或有普通法伴侣并且一同来加拿大</string>
+    <string name="crs_spouse_edu_title">伴侣最高教育水平</string>
+    <string name="crs_spouse_canada_work_exp_title">伴侣的加拿大工作经历</string>
+    <string name="crs_spouse_language_eng_title">伴侣英语水平(IELTS-G类或CELPIP-G)，如果两者都有取语言水平最高的那个</string>
+    <string name="crs_spouse_fr_level_title">伴侣法语水平(TEF或TCF)</string>
+    <string name="crs_spouse_fr_level_checkbox_desc">伴侣有法语测试成绩</string>
+    <string name="crs_submit">打分</string>
+
+    <string-array name="crs_foreign_work_exp_years">
+        <item>@string/crs_foreign_work_less_than_1_year</item>
+        <item>@string/crs_foreign_work_2_year</item>
+        <item>@string/crs_foreign_work_3_year_more</item>
+    </string-array>
+
+    <string-array name="crs_canadian_work_exp_years">
+        <item>@string/crs_candian_exp_less_one_year</item>
+        <item>@string/crs_candian_exp_one_year</item>
+        <item>@string/crs_candian_exp_two_year</item>
+        <item>@string/crs_candian_exp_three_year</item>
+        <item>@string/crs_candian_exp_four_year</item>
+        <item>@string/crs_candian_exp_five_more_year</item>
+    </string-array>
 
     <string-array name="crs_fr_language_level_listening">
         <item>@string/crs_fr_listening_less_clb4</item>

@@ -39,7 +39,7 @@ public class CrsDataModel {
 
     private RankingItem cookCanadianWorkExpItem() {
         RankingItem crsCanadianExp = new RankingItem();
-        crsCanadianExp.title = getString(R.string.crs_canadian_exp);
+        crsCanadianExp.title = getString(R.string.crs_canadian_exp_title);
         crsCanadianExp.description = getString(R.string.crs_canadian_exp_desc);
         crsCanadianExp.put(getString(R.string.crs_candian_exp_less_one_year), 0, 0);
         crsCanadianExp.put(getString(R.string.crs_candian_exp_one_year), 35, 40);

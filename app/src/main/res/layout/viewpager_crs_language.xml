@@ -16,12 +16,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="20dp">
 
             <TextView
@@ -86,8 +86,36 @@
                 android:id="@+id/spin_choose_fr_listening_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:entries="@array/crs_fr_language_level_listening"
                 android:visibility="@{UserData.hasFrTestResult?View.VISIBLE:View.GONE}"
                 app:layout_constraintTop_toBottomOf="@id/cb_has_fr_test_score" />
+
+            <Spinner
+                android:id="@+id/spin_choose_fr_reading_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_fr_language_level_reading"
+                android:visibility="@{UserData.hasFrTestResult?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_fr_listening_level" />
+
+            <Spinner
+                android:id="@+id/spin_choose_fr_writing_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_fr_language_level_writing"
+                android:visibility="@{UserData.hasFrTestResult?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_fr_reading_level" />
+
+            <Spinner
+                android:id="@+id/spin_choose_fr_speaking_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/crs_fr_language_level_speaking"
+                android:visibility="@{UserData.hasFrTestResult?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/spin_choose_fr_writing_level" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
