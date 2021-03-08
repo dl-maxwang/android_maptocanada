@@ -102,6 +102,9 @@ public class NewsFragment extends Fragment {
                 public boolean onSingleTapConfirmed(MotionEvent e) {
                     long startTime = System.currentTimeMillis();
                     int childAdapterPosition = getItemPosition(e);
+                    if (newsPreviewBeanList == null) {
+                        return false;
+                    }
                     NewsPreviewBean newsItem = newsPreviewBeanList.get(childAdapterPosition);
                     if (newsItem != null) {
                         View childViewUnder = rv.findChildViewUnder(e.getX(), e.getY());

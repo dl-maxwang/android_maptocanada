@@ -1,7 +1,6 @@
 package com.zhen.maptocanada.ui.crs.crspages;
 
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +36,11 @@ public abstract class BaseCrsFragment<T extends ViewDataBinding> extends Fragmen
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         bindedView = DataBindingUtil.inflate(inflater, getLayoutId(), null, false);
+        doSomethingOnViewCreation(bindedView);
         return bindedView.getRoot();
     }
+
+    protected void doSomethingOnViewCreation(T bindedView){};
 
     protected abstract int getLayoutId();
 

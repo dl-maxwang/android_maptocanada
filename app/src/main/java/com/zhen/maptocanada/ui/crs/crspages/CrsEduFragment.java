@@ -24,10 +24,6 @@ public class CrsEduFragment extends BaseCrsFragment<ViewpagerCrsEduBinding> {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getBindedView().cbHasCanEdu.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            Log.d("DEBUG_CHECK_DB", "onCheckedChanged: " + getUserData().getHasCanEdu());
-            Toast.makeText(CrsEduFragment.this.getContext(), "checkChanged " + isChecked, Toast.LENGTH_SHORT).show();
-        });
     }
 
     @Override

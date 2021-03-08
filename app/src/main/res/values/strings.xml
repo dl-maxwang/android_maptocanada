@@ -66,9 +66,13 @@
     <string name="crs_language1_writing_title">阅读</string>
     <string name="crs_language1_writing_description">雅思G类 写作</string>
     <string name="crs_canadian_exp_title">加拿大工作经验</string>
-    <string name="crs_canadian_exp_desc"><![CDATA[加拿大<b>境内</br>持有合法工签的<b>全职</b>工作经验，
-    工作必须是NOC 0，A，B类别
-    <br/>NOC网站请参考：<a href=\"\"https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html>NOC查询</a>]]></string>
+    <string name="crs_canadian_exp_desc"><![CDATA[
+    加拿大<b>境内</b>持有合法工签的<b>全职</b>工作经验，
+        工作必须是NOC 0，A，B类别
+        <br/>NOC网站请参考：
+            <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html">NOC查询</a>
+    ]]>
+        </string>
     <string name="crs_candian_exp_less_one_year">少于1年</string>
     <string name="crs_candian_exp_one_year">一年</string>
     <string name="crs_candian_exp_two_year">两年</string>
