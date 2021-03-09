@@ -18,8 +18,13 @@ public final class Consts {
     public static final String KEY_LANGUAGE_TEST2_WRITING = "CRS_LANGUAGE2_WRITING";
     public static final String KEY_CRS_CANADIAN_WORK_EXP = "CRS_CANADIAN_WORK_EXP";
     public static final String KEY_CRS_PARTENER_EDU = "CRS_PARTNER_EDU";
+    public static final String KEY_CRS_FR_LISTENING = "CRS_FR_LISTENING";
+    public static final String KEY_CRS_FR_READING = "CRS_FR_READING";
+    public static final String KEY_CRS_FR_WRITING = "CRS_FR_WRITING";
+    public static final String KEY_CRS_FR_SPEAKING = "CRS_FR_SPEAKING";
 
-    private Consts(){}
+    private Consts() {
+    }
 
     public static final String KEY_NEWS_ID = "key_news_id";
 

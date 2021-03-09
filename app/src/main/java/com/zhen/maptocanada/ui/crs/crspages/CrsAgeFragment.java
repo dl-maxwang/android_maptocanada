@@ -35,7 +35,6 @@ public class CrsAgeFragment extends BaseCrsFragment<ViewpagerCrsAgeBinding> {
         getBindedView().etCrsAge.post(() -> {
             getBindedView().etCrsAge.requestFocus();
             getBindedView().etCrsAge.setOnEditorActionListener((v, id, e) -> {
-                Toast.makeText(CrsAgeFragment.this.getContext(), "get the ime action!", Toast.LENGTH_LONG).show();
                 Log.d("Test EditTest", "doSomethingOnViewCreationg: " + id);
                 if (id == EditorInfo.IME_ACTION_NEXT) {
                     // switch to next fragment

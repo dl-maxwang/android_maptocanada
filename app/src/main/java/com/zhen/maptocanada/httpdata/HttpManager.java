@@ -34,7 +34,7 @@ public class HttpManager {
     private final HttpUrl.Builder articlesUrlBuilder;
     private static HttpManager instance;
 
-    public static HttpManager getInstance(){
+    public static HttpManager getInstance() {
         if (instance == null) {
             synchronized (HttpManager.class) {
                 if (instance == null) {
@@ -79,10 +79,12 @@ public class HttpManager {
         articlesUrlBuilder.removeAllQueryParameters("c");
 
         articlesUrlBuilder.addQueryParameter("page", String.valueOf(pageNo))
-                .addQueryParameter("pageSize", String.valueOf(itemNo))
-                .addQueryParameter("c", "news");
+                .addQueryParameter("pageSize", String.valueOf(itemNo));
+        // add later
+//                .addQueryParameter("c", "news");
 
         Request req = new Request.Builder().url(articlesUrlBuilder.build()).build();
+        System.out.println(req.toString());
         return httpClient.newCall(req).execute();
 
     }

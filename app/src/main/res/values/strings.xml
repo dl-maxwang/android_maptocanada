@@ -15,8 +15,8 @@
     </ul>
     ]]></string>
     <string name="crs_edu_title">教育背景</string>
-    <string name="crs_edu_description">有读过书吗</string>
-    <string name="crs_edu_item_less_than_highschool">高中都没毕业</string>
+    <string name="crs_edu_description">本国读过书吗</string>
+    <string name="crs_edu_item_less_than_highschool">没有或者高中都没毕业</string>
     <string name="crs_edu_item_highschool">高中文凭</string>
     <string name="crs_edu_item_one_year_post_secondary">高中以上大专或学院的一年制文凭或证书</string>
     <string name="crs_edu_item_two_year_post_secondary">两年制的大专，学院或者大学的学位，文凭或证书</string>
@@ -84,7 +84,7 @@
     </string>
     <string name="years_old">岁</string>
     <string name="next_step">下一步</string>
-    <string name="has_can_edu">是否有加拿大学历</string>
+    <string name="has_can_edu">有加拿大学历</string>
     <string name="crs_can_edu_secondary_school_or_less">高中及高中以下学历</string>
     <string name="crs_can_edu_one_or_two_year_cert">一年或两年制文凭或证书</string>
     <string name="crs_can_edu_three_or_more_year_cert">三年或三年以上的文凭，学位；或研究生及以上学历</string>
@@ -155,6 +155,29 @@
     <string name="crs_spouse_fr_level_title">伴侣法语水平(TEF或TCF)</string>
     <string name="crs_spouse_fr_level_checkbox_desc">伴侣有法语测试成绩</string>
     <string name="crs_submit">打分</string>
+    <string name="crs_summary">打分总结</string>
+    <string name="crs_total_score">总分</string>
+    <string name="crs_summary_human_factors">人才得分</string>
+    <string name="textview_crs_age_title">年龄</string>
+    <string name="textview_crs_edu_title">学历</string>
+    <string name="textview_summray_crs_language_title">语言</string>
+    <string name="textview_summray_crs_can_exp_title">加拿大工作经验</string>
+    <string name="crs_summary_transferable_skill_summary">Skill Transferability（最高50分）</string>
+    <string name="textview_summray_crs_language_post_secondary_title">高语言水平且本科及以上学位</string>
+    <string name="textview_summray_crs_have_can_work_exp_post_secondary_title">有加拿大工作经验且本科及以上学位</string>
+    <string name="crs_summary_foreign_work_summary_title">工作经验（最高50分）</string>
+    <string name="textview_summay_crs_foreign_exp_and_good_language_title">高语言水平且符合海外工作经验</string>
+    <string name="textview_summay_crs_foreign_exp_and_can_exp_title">加拿大工作经验及海外经验</string>
+    <string name="crs_summary_trade_occupation_summary_title">Trade Occupation</string>
+    <string name="textview_summay_crs_good_language_and_trade_occupation">高语言水平且有Trade Occupation</string>
+    <string name="crs_summary_additional_title">额外加分（最高600分）</string>
+    <string name="textview_summay_crs_has_pr_relatives">有加拿大亲属</string>
+    <string name="textview_summay_fr_language">法语得分</string>
+    <string name="txtview_crs_summary_has_can_edu_exp">有加拿大高中以上教育证书</string>
+    <string name="txtview_crs_summary_has_lmia_offer">有LMIA工作</string>
+    <string name="txtview_crs_summary_has_pn_nomination_offer">有省提名Provincial Nomination</string>
+    <string name="progress_summarizing">计算总分中</string>
+    <string name="btn_close_dialog">关闭</string>
 
     <string-array name="crs_foreign_work_exp_years">
         <item>@string/crs_foreign_work_less_than_1_year</item>

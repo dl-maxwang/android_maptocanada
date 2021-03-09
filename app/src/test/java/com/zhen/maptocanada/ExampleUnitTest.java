@@ -28,8 +28,8 @@ public class ExampleUnitTest {
     @Test
     public void testHttpClient() throws IOException {
         HttpManager manager = new HttpManager();
-        Response categories = manager.getCategories();
-        System.out.println(categories.body().string());
+//        Response categories = manager.getCategories();
+//        System.out.println(categories.body().string());
         Response newsArticles = manager.getNewsList(1, 100);
         System.out.println(newsArticles.body().string());
     }

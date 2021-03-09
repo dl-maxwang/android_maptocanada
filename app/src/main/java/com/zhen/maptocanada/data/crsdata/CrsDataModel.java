@@ -7,11 +7,23 @@ import com.zhen.maptocanada.data.Consts;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class CrsDataModel {
 
     private final Context context;
     private LinkedHashMap<String, RankingItem> rankingItems = new LinkedHashMap<>();
+
+    /**
+     * First Language Score
+     * language level, score if single, score if with spouse
+     */
+    public LinkedHashMap<Integer, Integer[]> FirstLanguageTable = new LinkedHashMap<>();
+    public LinkedHashMap<Integer, Integer[]> SecondaryLanguageTable = new LinkedHashMap<>();
+    public LinkedHashMap<Integer, Integer[]> CanadianWorkExpTable = new LinkedHashMap<>();
+    public LinkedHashMap<Integer, Integer[]> AgeLookupTable = new LinkedHashMap<>();
+    public LinkedHashMap<TransferableSkillPair, Integer[]> TransferableSkillLookupTable = new LinkedHashMap<>();
+
 
     public CrsDataModel(Context context) {
         this.context = context;
@@ -29,6 +41,50 @@ public class CrsDataModel {
         rankingItems.put(Consts.KEY_LANGUAGE_TEST1_WRITING, cookLanguage1WritingItem());
         rankingItems.put(Consts.KEY_CRS_CANADIAN_WORK_EXP, cookCanadianWorkExpItem());
         rankingItems.put(Consts.KEY_CRS_PARTENER_EDU, cookingSpouseEduItem());
+        rankingItems.put(Consts.KEY_CRS_FR_LISTENING, cookFrLanguageListeningItem());
+        rankingItems.put(Consts.KEY_CRS_FR_READING, cookFrLanguageReadingItem());
+        rankingItems.put(Consts.KEY_CRS_FR_WRITING, cookFrLanguageWritingItem());
+        rankingItems.put(Consts.KEY_CRS_FR_SPEAKING, cookFrLanguageSpeakingItem());
+
+        // first language score lookup table
+        FirstLanguageTable.put(3, new Integer[]{0, 0});
+        FirstLanguageTable.put(4, new Integer[]{6, 6});
+        FirstLanguageTable.put(5, new Integer[]{6, 6});
+        FirstLanguageTable.put(6, new Integer[]{8, 9});
+        FirstLanguageTable.put(7, new Integer[]{16, 17});
+        FirstLanguageTable.put(8, new Integer[]{22, 23});
+        FirstLanguageTable.put(9, new Integer[]{29, 31});
+        FirstLanguageTable.put(10, new Integer[]{32, 34});
+
+        // secondary language score lookup table
+        SecondaryLanguageTable.put(4, new Integer[]{0, 0});
+        SecondaryLanguageTable.put(5, new Integer[]{1, 1});
+        SecondaryLanguageTable.put(6, new Integer[]{1, 1});
+        SecondaryLanguageTable.put(7, new Integer[]{3, 3});
+        SecondaryLanguageTable.put(8, new Integer[]{3, 3});
+        SecondaryLanguageTable.put(9, new Integer[]{6, 6});
+
+        // Canada Work Exp
+        CanadianWorkExpTable.put(0, new Integer[]{0, 0});
+        CanadianWorkExpTable.put(1, new Integer[]{35, 40});
+        CanadianWorkExpTable.put(2, new Integer[]{46, 53});
+        CanadianWorkExpTable.put(3, new Integer[]{56, 64});
+        CanadianWorkExpTable.put(4, new Integer[]{63, 72});
+        CanadianWorkExpTable.put(5, new Integer[]{70, 80});
+
+
+    }
+
+    private RankingItem cookFrLanguageReadingItem() {
+        return null;
+    }
+
+    private RankingItem cookFrLanguageWritingItem() {
+        return null;
+    }
+
+    private RankingItem cookFrLanguageSpeakingItem() {
+        return null;
     }
 
     private RankingItem cookingSpouseEduItem() {
@@ -48,6 +104,13 @@ public class CrsDataModel {
         crsCanadianExp.put(getString(R.string.crs_candian_exp_four_year), 63, 72);
         crsCanadianExp.put(getString(R.string.crs_candian_exp_five_more_year), 70, 80);
         return crsCanadianExp;
+    }
+
+    private RankingItem cookFrLanguageListeningItem() {
+        RankingItem crsFrListening = new RankingItem();
+        crsFrListening.tag = "CRS_FRENCH_LISTENING";
+
+        return crsFrListening;
     }
 
     private RankingItem cookLanguage1ListeningItem() {
@@ -182,5 +245,79 @@ public class CrsDataModel {
         public void put(String optionName, int scoreSingle, int scoreSpouse) {
             optionsScorePair.put(optionName, new Integer[]{scoreSingle, scoreSpouse});
         }
+
+
     }
+
+    public enum EducationalLevel {
+        LESS_THAN_SECONDARY(0),
+        SECONDARY(1),
+        ONE_YEAR_DIPLOMA(2),
+        TWO_YEAR_DIPLOMA(3),
+        BACHELOR_DIPLOMA(4),
+        TWO_CERTIFICATES(5),
+        MASTER_DEGREE(6),
+        PHD(7);
+
+        private final int value;
+
+        EducationalLevel(int level) {
+            this.value = level;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    public enum LanguageLevel {
+        CLB_LESS4(3),
+        CLB4(4),
+        CLB5(5),
+        CLB6(6),
+        CLB7(7),
+        CLB8(8),
+        CLB9(9),
+        CLB10_OR_GREATER(10);
+
+        private final int value;
+
+        LanguageLevel(int level) {
+            this.value = level;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    public static class TransferableSkillPair{
+        public int languageLevel = 0;
+        public int educationalLevel = 0;
+
+        public TransferableSkillPair() {
+        }
+
+        public TransferableSkillPair(int languageLevel, int educationalLevel) {
+            this.languageLevel = languageLevel;
+            this.educationalLevel = educationalLevel;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            TransferableSkillPair that = (TransferableSkillPair) o;
+            return languageLevel == that.languageLevel &&
+                    educationalLevel == that.educationalLevel;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(languageLevel, educationalLevel);
+        }
+    }
+
+
+
 }

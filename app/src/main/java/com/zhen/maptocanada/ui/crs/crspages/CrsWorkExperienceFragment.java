@@ -28,7 +28,7 @@ public class CrsWorkExperienceFragment extends BaseCrsFragment<ViewpagerCrsCanad
     @Override
     protected void doSomethingOnViewCreation(ViewpagerCrsCanadianWorkExpBinding bindedView) {
         super.doSomethingOnViewCreation(bindedView);
-//        bindedView.tvCrsCanadianWorkExpDesc.setText(Html.fromHtml(getString(R.string.crs_canadian_exp_desc)));
+        // make link clickable
         bindedView.tvCrsCanadianWorkExpDesc.setMovementMethod(LinkMovementMethod.getInstance());
     }
 

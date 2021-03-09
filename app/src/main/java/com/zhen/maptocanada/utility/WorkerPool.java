@@ -1,6 +1,10 @@
 package com.zhen.maptocanada.utility;
 
+import android.app.Activity;
+
 import androidx.annotation.WorkerThread;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -33,6 +37,13 @@ public class WorkerPool {
         workingQueue1.execute(r);
     }
 
+    public void execute1(Activity c, Runnable r, Runnable rMain) {
+        workingQueue1.execute(() -> {
+            r.run();
+            c.runOnUiThread(rMain);
+        });
+    }
+
     public void execute2(Runnable r) {
         workingQueue2.execute(r);
     }
@@ -41,6 +52,14 @@ public class WorkerPool {
     public <V> Future<V> submit1(Callable<V> c) {
         return workingQueue1.submit(c);
     }
+
+    public <V> void submit1(Activity a, Callable<V> c1, Callable<V> c2) {
+        Future<V> result = workingQueue1.submit(c1);
+        a.runOnUiThread(()->{
+            workingQueue1.submit(c2);
+        });
+    }
+
     public <V> Future<V> submit2(Callable<V> c) {
         return workingQueue2.submit(c);
     }
