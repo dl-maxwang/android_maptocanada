@@ -23,6 +23,24 @@ public final class Consts {
     public static final String KEY_CRS_FR_WRITING = "CRS_FR_WRITING";
     public static final String KEY_CRS_FR_SPEAKING = "CRS_FR_SPEAKING";
 
+    // key skill transferability
+    public static final String KEY_HIGH_CLB_AND_HIGH_EDU = "key_crs_high_clb_and_high_edu";
+    public static final String KEY_HAS_CAN_WORK_EXP_AND_HIGH_EDU = "key_crs_has_can_work_exp_and_high_edu";
+    public static final String KEY_CRS_FIRST_LANGUAGE_SCORE = "key-crs-first-language-score";
+    public static final String KEY_CRS_SECONDARY_LANGUAGE_SCORE = "key_crs_secondary_language_score";
+    public static final String KEY_CRS_SPOUSE_EDU_SCORE = "key_crs_spouse_education_score";
+    public static final String KEY_CRS_SPOUSE_LANGUAGE_SCORE = "key_crs_spouse_language_score";
+    public static final String KEY_CRS_SPOUSE_WORK_EXP_SCORE = "key_crs_spouse_canadian_work_exp_score";
+    public static final String KEY_CRS_GOOD_LANGUAGE_AND_HIGH_EDU = "key_crs_good_language_and_good_edu";
+    public static final String KEY_CRS_CANADIAN_WORK_EXP_AND_HIGH_EDU = "key_crs_canadian_work_exp_and_good_edu";
+    public static final String KEY_CRS_FOREIGN_WORK_EXP = "key_crs_foreign_work_exp";
+    public static final String KEY_CRS_FOREIGN_EXP_WITH_CAN_EXP = "key_crs_foreign_work_exp_with_can_work_exp";
+    public static final String KEY_CRS_ADDTIONAL_FR = "key_crs_frech_nlcl7";
+    public static final String KEY_CRS_CAN_EDU_EXP = "key_crs_can_edu_length";
+    public static final String KEY_CRS_LIMA_SCORE = "key_crs_lmia_score";
+    public static final String KEY_CRS_HAS_PN = "key_crs_has_pn";
+    public static final String KEY_CRS_HAS_PR_RELATIVE = "key_crs_has_pr_relatives";
+
     private Consts() {
     }
 

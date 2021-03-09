@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -65,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="470"
+                android:text="@{CrsSummary.strTotalScore}"
                 android:textSize="40dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -105,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="100"
-                android:text=""
+                android:text="@{CrsSummary.strAgeScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_crs_age_title" />
@@ -138,11 +139,11 @@
 
             <TextView
                 android:id="@+id/tv_crs_edu_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="17dp"
+                android:layout_height="12dp"
                 android:layout_marginRight="40dp"
                 android:hint="140"
-                android:text=""
+                android:text="@{CrsSummary.strEduScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_crs_edu_title" />
@@ -192,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="150"
-                android:text=""
+                android:text="@{CrsSummary.strLanguageScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_language_title" />
@@ -228,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="70"
-                android:text=""
+                android:text="@{CrsSummary.strCanadaWorkExp}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_can_exp_title" />
@@ -272,7 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="50"
-                android:text=""
+                android:text="@{CrsSummary.highLanguageAndHighEdu}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_language_post_secondary_title" />
@@ -307,7 +308,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="50"
-                android:text=""
+                android:text="@{CrsSummary.canWorkExpAndHighEdu}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_can_work_exp_post_secondary_title" />
@@ -350,7 +351,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="50"
-                android:text=""
+                android:text="@{CrsSummary.foreignWorkExpScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_foreign_exp_and_good_language_title" />
@@ -384,7 +385,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="50"
-                android:text=""
+                android:text="@{CrsSummary.canWorkExpAndForeignWorkExpScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_foreign_exp_and_can_exp_title" />
@@ -427,7 +428,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="50"
-                android:text=""
+                android:text="@{CrsSummary.tradeOccupationScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_crs_trade_occupation_and_can_exp_title" />
@@ -470,7 +471,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="15"
-                android:text=""
+                android:text="@{CrsSummary.canRelativeScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_additional_has_pr_relatives_title" />
@@ -503,7 +504,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="50"
-                android:text=""
+                android:text="@{CrsSummary.extraFrScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_additional_fr_language_title" />
@@ -536,7 +537,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="30"
-                android:text=""
+                android:text="@{CrsSummary.extraCanadianEduScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_canada_edu_title" />
@@ -570,7 +571,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="200"
-                android:text=""
+                android:text="@{CrsSummary.lmiaScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_lmia_offer_title" />
@@ -604,18 +605,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:hint="600"
-                android:text=""
+                android:text="@{CrsSummary.pnScore}"
                 android:textSize="@dimen/summary_sub_item"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_summay_has_pn_nomination_title" />
 
             <Button
-                android:id="@+id/btn_close_dialog"
+                android:id="@+id/btn_analysis_your_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/btn_close_dialog"
-                android:textAlignment="center"
+                android:text="@string/btn_analysis"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_summay_has_pn_nomination_result" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

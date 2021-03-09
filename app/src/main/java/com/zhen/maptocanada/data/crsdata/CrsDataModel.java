@@ -12,7 +12,7 @@ import java.util.Objects;
 public class CrsDataModel {
 
     private final Context context;
-    private LinkedHashMap<String, RankingItem> rankingItems = new LinkedHashMap<>();
+    public LinkedHashMap<String, RankingItem> rankingItems = new LinkedHashMap<>();
 
     /**
      * First Language Score
@@ -21,8 +21,17 @@ public class CrsDataModel {
     public LinkedHashMap<Integer, Integer[]> FirstLanguageTable = new LinkedHashMap<>();
     public LinkedHashMap<Integer, Integer[]> SecondaryLanguageTable = new LinkedHashMap<>();
     public LinkedHashMap<Integer, Integer[]> CanadianWorkExpTable = new LinkedHashMap<>();
+    public LinkedHashMap<Integer, Integer> SpouseCanadianWorkExpTable = new LinkedHashMap<>();
+    public Map<Integer, Integer[]> EducationLookupTable = new LinkedHashMap<>();
+    public Map<Integer, Integer> SpouseEducationLookupTable = new LinkedHashMap<>();
+    public Map<Integer, Integer> SpouseLanguageLookupTable = new LinkedHashMap<>();
     public LinkedHashMap<Integer, Integer[]> AgeLookupTable = new LinkedHashMap<>();
-    public LinkedHashMap<TransferableSkillPair, Integer[]> TransferableSkillLookupTable = new LinkedHashMap<>();
+    public LinkedHashMap<CrsDataModel.TransferableEducation, Integer> TransferableEducation = new LinkedHashMap<>();
+    public LinkedHashMap<CrsDataModel.TransferableEducation, Integer> TransferableCanadianWorkExpAndEducation = new LinkedHashMap<>();
+    /**
+     * canadian exp, working years; score
+     */
+    public LinkedHashMap<CrsDataModel.TransferableEducation, Integer> CanadianExpAndPostSecondaryDegree = new LinkedHashMap<>();
 
 
     public CrsDataModel(Context context) {
@@ -30,6 +39,26 @@ public class CrsDataModel {
     }
 
     public void init() {
+        // spouse english
+        SpouseLanguageLookupTable.put(3, 0);
+        SpouseLanguageLookupTable.put(4, 0);
+        SpouseLanguageLookupTable.put(5, 1);
+        SpouseLanguageLookupTable.put(6, 1);
+        SpouseLanguageLookupTable.put(7, 3);
+        SpouseLanguageLookupTable.put(8, 3);
+        SpouseLanguageLookupTable.put(9, 5);
+        SpouseLanguageLookupTable.put(10, 5);
+
+        // education
+        EducationLookupTable.put(0, new Integer[]{0, 0});
+        EducationLookupTable.put(1, new Integer[]{28, 30});
+        EducationLookupTable.put(2, new Integer[]{84, 90});
+        EducationLookupTable.put(3, new Integer[]{91, 98});
+        EducationLookupTable.put(4, new Integer[]{112, 120});
+        EducationLookupTable.put(5, new Integer[]{119, 128});
+        EducationLookupTable.put(6, new Integer[]{126, 135});
+        EducationLookupTable.put(7, new Integer[]{140, 150});
+
         // AGE
         RankingItem crsAgeItem = cookAgeRankingItem();
         RankingItem crsEduItem = cookEducationItem();
@@ -46,6 +75,16 @@ public class CrsDataModel {
         rankingItems.put(Consts.KEY_CRS_FR_WRITING, cookFrLanguageWritingItem());
         rankingItems.put(Consts.KEY_CRS_FR_SPEAKING, cookFrLanguageSpeakingItem());
 
+        // spouse edu scores
+        SpouseEducationLookupTable.put(0, 0);
+        SpouseEducationLookupTable.put(1, 2);
+        SpouseEducationLookupTable.put(2, 6);
+        SpouseEducationLookupTable.put(3, 7);
+        SpouseEducationLookupTable.put(4, 8);
+        SpouseEducationLookupTable.put(5, 9);
+        SpouseEducationLookupTable.put(6, 10);
+        SpouseEducationLookupTable.put(7, 10);
+
         // first language score lookup table
         FirstLanguageTable.put(3, new Integer[]{0, 0});
         FirstLanguageTable.put(4, new Integer[]{6, 6});
@@ -57,12 +96,14 @@ public class CrsDataModel {
         FirstLanguageTable.put(10, new Integer[]{32, 34});
 
         // secondary language score lookup table
+        SecondaryLanguageTable.put(3, new Integer[]{0, 0});
         SecondaryLanguageTable.put(4, new Integer[]{0, 0});
         SecondaryLanguageTable.put(5, new Integer[]{1, 1});
         SecondaryLanguageTable.put(6, new Integer[]{1, 1});
         SecondaryLanguageTable.put(7, new Integer[]{3, 3});
         SecondaryLanguageTable.put(8, new Integer[]{3, 3});
         SecondaryLanguageTable.put(9, new Integer[]{6, 6});
+        SecondaryLanguageTable.put(10, new Integer[]{6, 6});
 
         // Canada Work Exp
         CanadianWorkExpTable.put(0, new Integer[]{0, 0});
@@ -72,7 +113,88 @@ public class CrsDataModel {
         CanadianWorkExpTable.put(4, new Integer[]{63, 72});
         CanadianWorkExpTable.put(5, new Integer[]{70, 80});
 
+        // Spouse Canadian Work Exp
+        SpouseCanadianWorkExpTable.put(0, 0);
+        SpouseCanadianWorkExpTable.put(1, 5);
+        SpouseCanadianWorkExpTable.put(2, 7);
+        SpouseCanadianWorkExpTable.put(3, 8);
+        SpouseCanadianWorkExpTable.put(4, 9);
+        SpouseCanadianWorkExpTable.put(5, 10);
 
+        // Transferable Skill Lookup
+        TransferableEducation.put(new TransferableEducation(7, 0), 0);
+        TransferableEducation.put(new TransferableEducation(9, 0), 0);
+
+        TransferableEducation.put(new TransferableEducation(7, 1), 13);
+        TransferableEducation.put(new TransferableEducation(9, 1), 25);
+
+        TransferableEducation.put(new TransferableEducation(7, 2), 13);
+        TransferableEducation.put(new TransferableEducation(9, 2), 25);
+
+        TransferableEducation.put(new TransferableEducation(7, 3), 13);
+        TransferableEducation.put(new TransferableEducation(9, 3), 25);
+
+        TransferableEducation.put(new TransferableEducation(7, 4), 13);
+        TransferableEducation.put(new TransferableEducation(9, 4), 25);
+
+        TransferableEducation.put(new TransferableEducation(7, 5), 25);
+        TransferableEducation.put(new TransferableEducation(9, 5), 50);
+
+        TransferableEducation.put(new TransferableEducation(7, 6), 25);
+        TransferableEducation.put(new TransferableEducation(9, 6), 50);
+
+        TransferableEducation.put(new TransferableEducation(7, 7), 25);
+        TransferableEducation.put(new TransferableEducation(9, 7), 50);
+
+        // canadian work exp and working years
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 0), 0);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 0), 0);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 1), 13);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 1), 25);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 2), 13);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 2), 25);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 3), 13);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 3), 25);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 4), 13);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 4), 25);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 5), 25);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 5), 50);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 6), 25);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 6), 50);
+
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(7, 7), 25);
+        CanadianExpAndPostSecondaryDegree.put(new TransferableEducation(9, 7), 50);
+
+        // foreign work exp and language level
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 0), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 0), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 1), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 1), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 2), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 2), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 3), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 3), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 4), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 4), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 5), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 5), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 6), 0);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 6), 0);
+
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(7, 7), 25);
+        TransferableCanadianWorkExpAndEducation.put(new TransferableEducation(9, 7), 50);
     }
 
     private RankingItem cookFrLanguageReadingItem() {
@@ -194,10 +316,19 @@ public class CrsDataModel {
         crsAge.tag = "CRS_AGE";
         crsAge.title = getString(R.string.crs_age_title);
         crsAge.description = getString(R.string.crs_age_description);
-        crsAge.optionsScorePair.put("0-17", new Integer[]{0, 0});
+        crsAge.optionsScorePair.put("17", new Integer[]{0, 0});
         crsAge.optionsScorePair.put("18", new Integer[]{90, 99});
         crsAge.optionsScorePair.put("19", new Integer[]{95, 105});
-        crsAge.optionsScorePair.put("20-29", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("20", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("21", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("22", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("23", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("24", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("25", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("26", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("27", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("28", new Integer[]{100, 110});
+        crsAge.optionsScorePair.put("29", new Integer[]{100, 110});
         crsAge.optionsScorePair.put("30", new Integer[]{95, 105});
         crsAge.optionsScorePair.put("31", new Integer[]{90, 99});
         crsAge.optionsScorePair.put("32", new Integer[]{85, 94});
@@ -213,7 +344,7 @@ public class CrsDataModel {
         crsAge.optionsScorePair.put("42", new Integer[]{25, 28});
         crsAge.optionsScorePair.put("43", new Integer[]{15, 17});
         crsAge.optionsScorePair.put("44", new Integer[]{5, 6});
-        crsAge.optionsScorePair.put(">=45", new Integer[]{0, 0});
+        crsAge.optionsScorePair.put("45", new Integer[]{0, 0});
         return crsAge;
     }
 
@@ -221,7 +352,7 @@ public class CrsDataModel {
         return context.getResources().getString(id);
     }
 
-    static class RankingItem {
+    public static class RankingItem {
 
         public String group;
         /**
@@ -240,7 +371,7 @@ public class CrsDataModel {
         /**
          * option and score, score[0] without spouse, score[1] with spouse
          */
-        Map<String, Integer[]> optionsScorePair = new LinkedHashMap<>();
+        public Map<String, Integer[]> optionsScorePair = new LinkedHashMap<>();
 
         public void put(String optionName, int scoreSingle, int scoreSpouse) {
             optionsScorePair.put(optionName, new Integer[]{scoreSingle, scoreSpouse});
@@ -291,23 +422,23 @@ public class CrsDataModel {
         }
     }
 
-    public static class TransferableSkillPair{
+    public static class TransferableEducation {
         public int languageLevel = 0;
         public int educationalLevel = 0;
 
-        public TransferableSkillPair() {
+        public TransferableEducation() {
         }
 
-        public TransferableSkillPair(int languageLevel, int educationalLevel) {
+        public TransferableEducation(int languageLevel, int factor2) {
             this.languageLevel = languageLevel;
-            this.educationalLevel = educationalLevel;
+            this.educationalLevel = factor2;
         }
 
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            TransferableSkillPair that = (TransferableSkillPair) o;
+            CrsDataModel.TransferableEducation that = (CrsDataModel.TransferableEducation) o;
             return languageLevel == that.languageLevel &&
                     educationalLevel == that.educationalLevel;
         }
@@ -317,7 +448,4 @@ public class CrsDataModel {
             return Objects.hash(languageLevel, educationalLevel);
         }
     }
-
-
-
 }

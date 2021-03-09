@@ -26,15 +26,15 @@
     <string name="crs_edu_item_phd">博士（不是小学的那种）</string>
     <string name="crs_language1_listening_title">语言1 听力</string>
     <string name="crs_language1_listening_description">雅思G类 听力</string>
-    <string name="crs_language1_listening_less_clb4">听力 - 低于4.5 - clb4</string>
+    <string name="crs_language1_listening_less_clb4">听力 - 低于4.5 - clb4 以下</string>
     <string name="crs_language1_listening_clb5">听力5.0 - clb5</string>
     <string name="crs_language1_listening_clb6">听力5.5 - clb6</string>
     <string name="crs_language1_listening_clb7">听力6.0 - clb7</string>
     <string name="crs_language1_listening_clb8">听力7.5 - clb8</string>
     <string name="crs_language1_listening_clb9">听力8.0 - clb9</string>
-    <string name="crs_language1_listening_clb10">听力8.5以上 - clb10</string>
+    <string name="crs_language1_listening_clb10">听力8.5及以上 - clb10</string>
     <!-- language 1 reading -->
-    <string name="crs_language1_reading_less_clb4">阅读 - 低于3.5 - clb4</string>
+    <string name="crs_language1_reading_less_clb4">阅读 - 低于3.5 - clb4以下</string>
     <string name="crs_language1_reading_clb5">阅读 4.0 - clb5</string>
     <string name="crs_language1_reading_clb6">阅读 5.0 - clb6</string>
     <string name="crs_language1_reading_clb7">阅读 6.0 - clb7</string>
@@ -129,7 +129,7 @@
     <string name="crs_fr_speaking_clb10">口语 TEF 393–450, TCF 549–699</string>
     <string name="crs_foreign_work_title">海外工作经验</string>
     <string name="crs_foreign_work_desc">在任意地区的有效工作经验，必须属于NOC0, A, B分类</string>
-    <string name="crs_foreign_work_less_than_1_year">一年及一年以下</string>
+    <string name="crs_foreign_work_less_than_1_year">一年以下</string>
     <string name="crs_foreign_work_2_year">两年</string>
     <string name="crs_foreign_work_3_year_more">三年及三年以上</string>
     <string name="crs_lmia_title">Labour Market Impact Assessment</string>
@@ -177,10 +177,19 @@
     <string name="txtview_crs_summary_has_lmia_offer">有LMIA工作</string>
     <string name="txtview_crs_summary_has_pn_nomination_offer">有省提名Provincial Nomination</string>
     <string name="progress_summarizing">计算总分中</string>
-    <string name="btn_close_dialog">关闭</string>
+    <string name="btn_analysis">分析</string>
+    <string name="crs_foreign_work_1_year">一年</string>
+    <string name="job_type_noc0">LMIA工作分类：NOC 0</string>
+    <string name="job_type_nocA_B_other_than_0">LMIA工作分类：NOC A, B</string>
+    <string name="job_type_nocC_D">LMIA工作分类：NOC C 或 D</string>
+    <string name="crs_language1_listening_clb4">听力 4.5 - clb4</string>
+    <string name="crs_language1_reading_clb4">阅读 3.5 - clb4</string>
+    <string name="crs_language1_writing_clb4">写作 4.0 - clb4</string>
+    <string name="crs_language1_speaking__clb4">口语 4.0 - clb4</string>
 
     <string-array name="crs_foreign_work_exp_years">
         <item>@string/crs_foreign_work_less_than_1_year</item>
+        <item>@string/crs_foreign_work_1_year</item>
         <item>@string/crs_foreign_work_2_year</item>
         <item>@string/crs_foreign_work_3_year_more</item>
     </string-array>
@@ -192,6 +201,12 @@
         <item>@string/crs_candian_exp_three_year</item>
         <item>@string/crs_candian_exp_four_year</item>
         <item>@string/crs_candian_exp_five_more_year</item>
+    </string-array>
+
+    <string-array name="crs_lmia_job_type">
+        <item>@string/job_type_noc0</item>
+        <item>@string/job_type_nocA_B_other_than_0</item>
+        <item>@string/job_type_nocC_D</item>
     </string-array>
 
     <string-array name="crs_fr_language_level_listening">
@@ -258,6 +273,7 @@
 
     <string-array name="crs_language_level_listening">
         <item>@string/crs_language1_listening_less_clb4</item>
+        <item>@string/crs_language1_listening_clb4</item>
         <item>@string/crs_language1_listening_clb5</item>
         <item>@string/crs_language1_listening_clb6</item>
         <item>@string/crs_language1_listening_clb7</item>
@@ -268,6 +284,7 @@
 
     <string-array name="crs_language_level_reading">
         <item>@string/crs_language1_reading_less_clb4</item>
+        <item>@string/crs_language1_reading_clb4</item>
         <item>@string/crs_language1_reading_clb5</item>
         <item>@string/crs_language1_reading_clb6</item>
         <item>@string/crs_language1_reading_clb7</item>
@@ -278,6 +295,7 @@
 
     <string-array name="crs_language_level_writing">
         <item>@string/crs_language1_writing_less_clb4</item>
+        <item>@string/crs_language1_writing_clb4</item>
         <item>@string/crs_language1_writing_clb5</item>
         <item>@string/crs_language1_writing_clb6</item>
         <item>@string/crs_language1_writing_clb7</item>
@@ -288,6 +306,7 @@
 
     <string-array name="crs_language_level_speaking">
         <item>@string/crs_language1_speaking_less_clb4</item>
+        <item>@string/crs_language1_speaking__clb4</item>
         <item>@string/crs_language1_speaking_clb5</item>
         <item>@string/crs_language1_speaking_clb6</item>
         <item>@string/crs_language1_speaking_clb7</item>

@@ -10,6 +10,14 @@ public class CrsUserData extends BaseObservable {
     Crs Age
      */
     public String crsAge = "";
+    /**
+     * canada work experience, must be 0 A B
+     */
+    public int canWorkExp = 0;
+    /**
+     * foreign work exp, must be NOC 0 A B
+     */
+    public int foreignWorkExp = 0;
 
     @Bindable
     public String getCrsAge() {
@@ -20,6 +28,7 @@ public class CrsUserData extends BaseObservable {
     public int crsEngListeningClbLevel = 0;
     public int crsEngWritingClbLevel = 0;
     public int crsEngSpeakingClbLevel = 0;
+    public int crsEngSummaryClbLevel = 0;
 
     public void setCrsAge(String age) {
         if (String.valueOf(crsAge).equalsIgnoreCase(age)) {
@@ -29,7 +38,9 @@ public class CrsUserData extends BaseObservable {
         notifyPropertyChanged(BR.crsAge);
     }
 
-    boolean hasCanEdu = false;
+    /*---------------------------Canada Edu Exp-------------------------------*/
+
+    public boolean hasCanEdu = false;
 
     @Bindable
     public boolean getHasCanEdu() {
@@ -40,6 +51,12 @@ public class CrsUserData extends BaseObservable {
         this.hasCanEdu = has;
         notifyPropertyChanged(BR.hasCanEdu);
     }
+
+    public int basicEducationalLevel = 0;
+
+    public int canadaEducationalLevel = 0;
+
+    /*-------------------------French Test Result---------------------------------*/
 
     boolean hasFrTestResult = false;
 
@@ -57,6 +74,8 @@ public class CrsUserData extends BaseObservable {
     public int crsFrListeningClbLevel = 0;
     public int crsFrWritingClbLevel = 0;
     public int crsFrSpeakingClbLevel = 0;
+
+    public int crsFrSummaryClbLevel = 0;
 
     @Bindable
     public boolean isHasLmia() {
@@ -116,6 +135,22 @@ public class CrsUserData extends BaseObservable {
         this.spouseHasFrTestScore = spouseHasFrTestScore;
         notifyPropertyChanged(BR.spouseHasFrTestScore);
     }
+
+    public int lmiaJobType = 0;
+
+    public int spouseEngListeningLevel = 0;
+    public int spouseEngReadingLevel = 0;
+    public int spouseEngWritingLevel = 0;
+    public int spouseEngSpeakingLevel = 0;
+
+    public int spouseFrListeningLevel = 0;
+    public int spouseFrReadingLevel = 0;
+    public int spouseFrWritingLevel = 0;
+    public int spouseFrSpeakingLevel = 0;
+
+    public int spouseCanadaWorkExp = 0;
+
+    public int spouseEducationLevel = 0;
 
     public boolean spouseHasFrTestScore = false;
 

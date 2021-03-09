@@ -37,8 +37,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@{Html.fromHtml(@string/crs_canadian_exp_desc)}"
                 android:linksClickable="true"
+                android:text="@{Html.fromHtml(@string/crs_canadian_exp_desc)}"
                 app:layout_constraintTop_toBottomOf="@id/tv_crs_can_work_exp_title" />
 
             <Spinner
@@ -120,6 +120,14 @@
                 android:text="@string/crs_lmia_checkbox_desc"
                 app:layout_constraintTop_toBottomOf="@id/tv_lmia_desc" />
 
+            <Spinner
+                android:id="@+id/spin_lmia_job_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/crs_lmia_job_type"
+                android:visibility="@{UserData.hasLmia ? View.VISIBLE: View.GONE}"
+                app:layout_constraintTop_toBottomOf="@id/cb_has_lmia" />
+
             <View
                 android:id="@+id/break_line_3"
                 android:layout_width="match_parent"
@@ -128,7 +136,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="70dp"
                 android:background="@android:color/darker_gray"
-                app:layout_constraintTop_toBottomOf="@id/cb_has_lmia" />
+                app:layout_constraintTop_toBottomOf="@id/spin_lmia_job_type" />
 
             <TextView
                 android:id="@+id/tv_crs_nomination"

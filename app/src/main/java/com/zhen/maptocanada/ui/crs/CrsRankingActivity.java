@@ -9,7 +9,9 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.service.autofill.UserData;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.zhen.maptocanada.R;
+import com.zhen.maptocanada.data.crsdata.CrsDataModel;
 import com.zhen.maptocanada.databinding.ActivityCrsRankingBinding;
 import com.zhen.maptocanada.databinding.DialogCrsSummaryBinding;
 import com.zhen.maptocanada.ui.crs.data.CrsRankingVPAdatper;
@@ -28,11 +30,12 @@ public class CrsRankingActivity extends AppCompatActivity {
     private DialogCrsSummaryBinding dialogBinding;
     private Dialog summaryDialog;
     private CrsSummary summaryData;
+    private ActivityCrsRankingBinding crsRankingBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityCrsRankingBinding crsRankingBinding = DataBindingUtil.inflate(
+        crsRankingBinding = DataBindingUtil.inflate(
                 getLayoutInflater(), R.layout.activity_crs_ranking,
                 null, false);
         setContentView(crsRankingBinding.getRoot());
@@ -54,8 +57,10 @@ public class CrsRankingActivity extends AppCompatActivity {
         dialogBinding.ivCloseDialog.setOnClickListener(v -> {
             summaryDialog.dismiss();
         });
-        dialogBinding.btnCloseDialog.setOnClickListener(v -> {
+        dialogBinding.btnAnalysisYourScore.setOnClickListener(v -> {
             summaryDialog.dismiss();
+            Snackbar snackbar = Snackbar.make(crsRankingBinding.getRoot(), "点什么，还没做呢", Snackbar.LENGTH_SHORT);
+            snackbar.show();
         });
         summaryDialog.setContentView(dialogBinding.getRoot());
     }
@@ -73,12 +78,14 @@ public class CrsRankingActivity extends AppCompatActivity {
         pd.setMessage(getString(R.string.progress_summarizing));
         pd.show();
         WorkerPool.getInstance().execute1(() -> {
+            CrsDataModel scoreLookup = new CrsDataModel(CrsRankingActivity.this);
+            scoreLookup.init();
             try {
                 Thread.sleep(800);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            CrsSummaryHandler summaryHandler = new CrsSummaryHandler(userData);
+            CrsSummaryHandler summaryHandler = new CrsSummaryHandler(userData, scoreLookup);
             summaryHandler.cookFinalCrsSummary(CrsRankingActivity.this, summaryData);
             this.runOnUiThread(() -> {
                 summaryDialog.show();
@@ -87,6 +94,15 @@ public class CrsRankingActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (summaryDialog.isShowing()) {
+            summaryDialog.dismiss();
+            return;
+        }
+        super.onBackPressed();
     }
 
     @Override
