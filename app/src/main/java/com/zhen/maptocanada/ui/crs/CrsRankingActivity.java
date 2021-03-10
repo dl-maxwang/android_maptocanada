@@ -53,7 +53,7 @@ public class CrsRankingActivity extends AppCompatActivity {
         summaryDialog = new Dialog(this);
         summaryDialog.setCancelable(false);
         summaryDialog.setCanceledOnTouchOutside(false);
-        dialogBinding.setCrsSummary(summaryData);
+//        dialogBinding.setCrsSummary(summaryData);
         dialogBinding.ivCloseDialog.setOnClickListener(v -> {
             summaryDialog.dismiss();
         });
@@ -80,13 +80,14 @@ public class CrsRankingActivity extends AppCompatActivity {
         WorkerPool.getInstance().execute1(() -> {
             CrsDataModel scoreLookup = new CrsDataModel(CrsRankingActivity.this);
             scoreLookup.init();
+            CrsSummaryHandler summaryHandler = new CrsSummaryHandler(userData, scoreLookup);
             try {
                 Thread.sleep(800);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            CrsSummaryHandler summaryHandler = new CrsSummaryHandler(userData, scoreLookup);
             summaryHandler.cookFinalCrsSummary(CrsRankingActivity.this, summaryData);
+            dialogBinding.setCrsSummary(summaryData);
             this.runOnUiThread(() -> {
                 summaryDialog.show();
                 pd.dismiss();

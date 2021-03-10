@@ -41,6 +41,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_crs_any_pr_relatives" />
 
             <CheckBox
+                android:checked="@={UserData.hasPRRelatives}"
                 android:id="@+id/cb_crs_has_pr_relatives"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
