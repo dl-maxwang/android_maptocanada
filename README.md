@@ -7,8 +7,19 @@
     <li>CRS评分工具</li>
     <li>勘误，纠错，通过获取准确的信息帮助您解脱中介带来的焦虑</li>
 </ul>
+apk(debug sprint) download
 
+https://1drv.ms/u/s!Aly8eSqx_NJlm4Ubz_ECwI8octZ5Og?e=TsBiBA
 
+### Next sprint TODO list
 
+<ol>
+	<li>English Version </li>
+    <li>fix minor bugs in CRS spouse grading logic</li>
+    <li>filter news by type</li>
+    <li>search</li>
+</ol>
+
+</ol>
 
 
