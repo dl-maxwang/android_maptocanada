@@ -11,14 +11,19 @@ apk(debug sprint) download
 
 https://1drv.ms/u/s!Aly8eSqx_NJlm4Ubz_ECwI8octZ5Og?e=TsBiBA
 
+<b>The difference to official ranking tool</b>
+
+The language with higher clb level are automatically chosen as primary language and the other as the secondary (if applicable).
+
 ### Next sprint TODO list
 
 <ol>
 	<li>English Version </li>
-    <li>fix minor bugs in CRS spouse grading logic</li>
+    <li><del>fix minor bugs in CRS spouse grading logic</del></li>
     <li>filter news by type</li>
     <li>search</li>
 </ol>
+
 
 </ol>
 
