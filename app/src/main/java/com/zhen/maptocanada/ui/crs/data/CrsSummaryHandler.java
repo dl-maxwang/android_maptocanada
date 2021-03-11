@@ -102,6 +102,7 @@ public class CrsSummaryHandler {
         summaryData.totalScore += canadianWorkExperienceScore;
 
         if (userData.spouseComeAlong) {
+            summaryData.hasSpouse = true;
             int spouseEduScore = getSpouseEduScore();
             finalScoreItem.put(Consts.KEY_CRS_SPOUSE_EDU_SCORE, spouseEduScore);
             summaryData.spouseEduScore = spouseEduScore;
@@ -169,7 +170,7 @@ public class CrsSummaryHandler {
                 additionalPoints += 50;
             } else {
                 finalScoreItem.put(Consts.KEY_CRS_ADDTIONAL_FR, 25);
-                additionalPoints += 50;
+                additionalPoints += 25;
             }
         }
 
@@ -198,11 +199,6 @@ public class CrsSummaryHandler {
             summaryData.pnScore = 600;
         }
         summaryData.hasPrRelatives = userData.hasPRRelatives;
-        if (userData.hasPRRelatives) {
-            finalScoreItem.put(Consts.KEY_CRS_HAS_PR_RELATIVE, 15);
-            additionalPoints += 15;
-            summaryData.addtionalPrRelativeScore = 15;
-        }
         additionalPoints = Math.min(additionalPoints, 600);
         summaryData.totalScore += additionalPoints;
     }
@@ -271,7 +267,7 @@ public class CrsSummaryHandler {
 
     private int getCanadianWorkExpAndHighEdu() {
         int skillTransferScore = 0;
-        if (userData.canWorkExp >= 1 && userData.canWorkExp < 2) {
+        if (userData.canWorkExp == 1) {
             switch (userData.basicEducationalLevel) {
                 case 0:
                 case 1:
