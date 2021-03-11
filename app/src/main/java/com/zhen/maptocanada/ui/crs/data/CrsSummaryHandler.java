@@ -169,7 +169,7 @@ public class CrsSummaryHandler {
                 additionalPoints += 50;
             } else {
                 finalScoreItem.put(Consts.KEY_CRS_ADDTIONAL_FR, 25);
-                additionalPoints += 50;
+                additionalPoints += 25;
             }
         }
 
@@ -198,11 +198,6 @@ public class CrsSummaryHandler {
             summaryData.pnScore = 600;
         }
         summaryData.hasPrRelatives = userData.hasPRRelatives;
-        if (userData.hasPRRelatives) {
-            finalScoreItem.put(Consts.KEY_CRS_HAS_PR_RELATIVE, 15);
-            additionalPoints += 15;
-            summaryData.addtionalPrRelativeScore = 15;
-        }
         additionalPoints = Math.min(additionalPoints, 600);
         summaryData.totalScore += additionalPoints;
     }
