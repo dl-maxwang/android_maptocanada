@@ -41,7 +41,7 @@ public class CrsRankingActivity extends AppCompatActivity {
         setContentView(crsRankingBinding.getRoot());
         setSummaryDialog();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        getSupportActionBar().setTitle(R.string.crs_activity_displayed_title);
         vpCrs = crsRankingBinding.vpCrsRanking;
         adapter = new CrsRankingVPAdatper(this, userData);
         vpCrs.setAdapter(adapter);

@@ -186,6 +186,7 @@
     <string name="crs_language1_reading_clb4">阅读 3.5 - clb4</string>
     <string name="crs_language1_writing_clb4">写作 4.0 - clb4</string>
     <string name="crs_language1_speaking__clb4">口语 4.0 - clb4</string>
+    <string name="crs_activity_displayed_title">CRS Tool</string>
 
     <string-array name="crs_foreign_work_exp_years">
         <item>@string/crs_foreign_work_less_than_1_year</item>
