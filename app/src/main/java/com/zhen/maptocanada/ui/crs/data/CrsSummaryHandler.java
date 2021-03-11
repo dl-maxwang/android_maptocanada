@@ -102,6 +102,7 @@ public class CrsSummaryHandler {
         summaryData.totalScore += canadianWorkExperienceScore;
 
         if (userData.spouseComeAlong) {
+            summaryData.hasSpouse = true;
             int spouseEduScore = getSpouseEduScore();
             finalScoreItem.put(Consts.KEY_CRS_SPOUSE_EDU_SCORE, spouseEduScore);
             summaryData.spouseEduScore = spouseEduScore;
@@ -266,7 +267,7 @@ public class CrsSummaryHandler {
 
     private int getCanadianWorkExpAndHighEdu() {
         int skillTransferScore = 0;
-        if (userData.canWorkExp >= 1 && userData.canWorkExp < 2) {
+        if (userData.canWorkExp == 1) {
             switch (userData.basicEducationalLevel) {
                 case 0:
                 case 1:
