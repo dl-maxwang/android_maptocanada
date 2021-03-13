@@ -9,7 +9,7 @@
 </ul>
 apk(debug sprint) download
 
-https://1drv.ms/u/s!Aly8eSqx_NJlm4Ubz_ECwI8octZ5Og?e=TsBiBA
+https://1drv.ms/u/s!Aly8eSqx_NJlm4YXJVIdrfGd3S-eiw?e=WhkH1B
 
 <b>The difference to official ranking tool</b>
 

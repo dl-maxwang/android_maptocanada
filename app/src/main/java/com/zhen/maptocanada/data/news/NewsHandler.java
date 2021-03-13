@@ -6,6 +6,7 @@ import com.zhen.maptocanada.httpdata.HttpManager;
 import com.zhen.maptocanada.utility.Utils;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -18,7 +19,7 @@ public class NewsHandler {
     // page, newsList
     private Map<Integer, NewsListData> newsListDataMap;
     // id, newsDetail Data
-    private Map<Integer, NewsDetailData> newsDetailDataMap;
+    private Map<Integer, WeakReference<NewsDetailData>> newsDetailDataMap;
     public static final int PAGE_SIZE = 50;
     private static NewsHandler instance;
 
@@ -48,7 +49,9 @@ public class NewsHandler {
     public void refreshNewsDetailCache(int newsId) throws IOException {
         newsDetailDataMap.clear();
         Response newsDetail = HttpManager.getInstance().getNewsDetail(newsId);
-        newsDetailDataMap.put(newsId, Utils.parseNewsDetail(Objects.requireNonNull(newsDetail.body()).string()));
+        NewsDetailData newsDetailData = Utils.parseNewsDetail(Objects.requireNonNull(newsDetail.body()).string());
+        WeakReference<NewsDetailData> wrNewsDetail = new WeakReference<>(newsDetailData);
+        newsDetailDataMap.put(newsId, wrNewsDetail);
     }
 
     @WorkerThread
@@ -63,9 +66,17 @@ public class NewsHandler {
     public NewsDetailData getNewsDetail(int newsId) throws IOException {
         if (newsDetailDataMap.get(newsId) == null) {
             Response newsDetail = HttpManager.getInstance().getNewsDetail(newsId);
-            newsDetailDataMap.put(newsId, Utils.parseNewsDetail(Objects.requireNonNull(newsDetail.body()).string()));
+            NewsDetailData newsDetailData = Utils.parseNewsDetail(Objects.requireNonNull(newsDetail.body()).string());
+            WeakReference<NewsDetailData> wrNewsDetailData = new WeakReference<>(newsDetailData);
+            newsDetailDataMap.put(newsId, wrNewsDetailData);
         }
-        return newsDetailDataMap.get(newsId);
+        WeakReference<NewsDetailData> newsDetailDataWeakReference = newsDetailDataMap.get(newsId);
+        if (newsDetailDataWeakReference == null || newsDetailDataWeakReference.get() == null) {
+            Response newsDetail = HttpManager.getInstance().getNewsDetail(newsId);
+            NewsDetailData newsDetailData = Utils.parseNewsDetail(Objects.requireNonNull(newsDetail.body()).string());
+            newsDetailDataWeakReference = new WeakReference<>(newsDetailData);
+        }
+        return newsDetailDataWeakReference.get();
     }
 
 
