@@ -7,7 +7,11 @@
     <li>CRS评分工具</li>
     <li>勘误，纠错，通过获取准确的信息帮助您解脱中介带来的焦虑</li>
 </ul>
-apk(debug sprint) download
+#### demo video
+
+https://youtu.be/ME-oLf_IBZo
+
+#### apk(debug sprint) download
 
 https://1drv.ms/u/s!Aly8eSqx_NJlm4YXJVIdrfGd3S-eiw?e=WhkH1B
 
@@ -24,7 +28,5 @@ The language with higher clb level are automatically chosen as primary language 
     <li>search</li>
 </ol>
 
-
-</ol>
 
 
