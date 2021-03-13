@@ -76,10 +76,17 @@ public class WorkerPool {
      * @throws ExecutionException
      * @throws InterruptedException
      */
-    public <V> void submit2(Activity a, Callable<V> c1, OnWorkerThreadReturned<V> c2)
-            throws ExecutionException, InterruptedException {
+    public <V> void submit2(Activity a, Callable<V> c1, OnWorkerThreadReturned<V> c2) {
         Future<V> submit = workingQueue2.submit(c1);
-        c2.OnWorkerThreadReturned(submit.get());
+        a.runOnUiThread(()->{
+            try {
+                c2.OnWorkerThreadReturned(submit.get());
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public <V> Future<V> submit2(Callable<V> c) {

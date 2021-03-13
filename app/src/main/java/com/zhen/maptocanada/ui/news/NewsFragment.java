@@ -72,9 +72,7 @@ public class NewsFragment extends Fragment {
         });
         // setup swipe refresh layout
 
-        srlNewsRefreshing.setOnRefreshListener(() -> {
-
-            try {
+        srlNewsRefreshing.setOnRefreshListener(() ->
                 WorkerPool.getInstance().submit2(NewsFragment.this.getActivity(), () -> {
                     try {
                         NewsHandler.getInstance().refreshNewsListCache(1);
@@ -91,14 +89,7 @@ public class NewsFragment extends Fragment {
                         adapter.setNewsList(o);
                         srlNewsRefreshing.setRefreshing(false);
                     });
-                });
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            ;
-        });
+                }));
 
 
         // setup on click event
